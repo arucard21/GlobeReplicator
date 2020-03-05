@@ -1,0 +1,75 @@
+plugins {
+    id 'scala'
+    id "jp.classmethod.aws.ec2" version "0.41"
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.scala-lang:scala-library:2.13.1'
+
+    testImplementation 'junit:junit:4.12'
+    testImplementation 'org.scalatest:scalatest_2.13:3.1.0'
+    testImplementation 'org.scalatestplus:junit-4-12_2.13:3.1.0.0'
+}
+
+
+aws {
+    profileName = 'default'
+    region = 'eu-west-3'
+}
+
+ext.awsInstanceURL = "";
+
+task deployEC2Instance(type: AmazonEC2RunInstanceTask) {
+    ami "ami-0a2ca21adb4a04084" //Ubuntu Server 18.04 on eu-west-3 (Paris)
+    keyName "globeReplicator"
+    instanceType "t2.micro"
+    userData "#!/bin/bash\n" + "apt update\n" + "apt install -y openjdk-11-jre\n"
+}
+
+task terminateEC2Instance(type: AmazonEC2TerminateInstanceTask) {
+    if(project.hasProperty("instanceID")){
+        instanceIds += project.property("instanceID")
+    }
+}
+
+task waitInstanceStatusStable(type: AmazonEC2WaitInstanceStatusTask) {
+    if(project.hasProperty("instanceID")){
+        instanceId = project.property("instanceID")
+        doLast {
+            println "Access instance with: ssh ubuntu@" + awsInstance.getPublicDnsName()
+            awsInstanceURL = awsInstance.getPublicDnsName()
+        }
+    }
+}
+
+task(uploadBootJarFiles){
+    dependsOn waitInstanceStatusStable
+    doLast{
+        exec {
+            println "Copying app-orchestrator, load-balancer and main-instance to the EC2 instance"
+            commandLine "scp",
+                    "-o", "stricthostkeychecking=no",
+                    "build/libs/globeReplicator.jar",
+                    "ubuntu@${awsInstanceURL}:~"
+        }
+    }
+}
+
+task deployApplication(){
+    dependsOn uploadBootJarFiles
+    doLast{
+        // wait for java to be installed
+        sleep(60 * 1000)
+        exec {
+            println "Starting Globe Replicator on the EC2 instance"
+            commandLine "ssh",
+                    "-o", "stricthostkeychecking=no",
+                    "ubuntu@${awsInstanceURL}",
+                    "nohup java -jar ~/globeReplicator.jar > ~/globeReplicator.log 2>&1 &"
+        }
+    }
+}
