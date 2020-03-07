@@ -3,33 +3,27 @@ import jp.classmethod.aws.gradle.ec2.AmazonEC2TerminateInstanceTask;
 import jp.classmethod.aws.gradle.ec2.AmazonEC2WaitInstanceStatusTask;
 
 plugins {
-    id 'scala'
-    id 'application'
+    id "java"
     id "com.github.johnrengelman.shadow" version "5.2.0"
     id "jp.classmethod.aws.ec2" version "0.41"
 }
 
-repositories {
-    mavenCentral()
-}
 
-dependencies {
-    implementation 'org.scala-lang:scala-library:2.13.1'
+subprojects {
+    apply plugin : 'scala'
+    apply plugin : 'application'
+    apply plugin : 'com.github.johnrengelman.shadow'
 
-    testImplementation 'junit:junit:4.12'
-    testImplementation 'org.scalatest:scalatest_2.13:3.1.0'
-    testImplementation 'org.scalatestplus:junit-4-12_2.13:3.1.0.0'
-}
+    repositories {
+        mavenCentral()
+    }
 
-application {
-    mainClassName = 'com.github.arucard21.globe.replicator.HelloWorld'
-}
+    dependencies {
+        implementation 'org.scala-lang:scala-library:2.13.1'
 
-jar {
-    manifest {
-        attributes(
-                'Main-Class': 'com.github.arucard21.globe.replicator.HelloWorld'
-        )
+        testImplementation 'junit:junit:4.12'
+        testImplementation 'org.scalatest:scalatest_2.13:3.1.0'
+        testImplementation 'org.scalatestplus:junit-4-12_2.13:3.1.0.0'
     }
 }
 
@@ -63,30 +57,48 @@ task waitInstanceStatusStable(type: AmazonEC2WaitInstanceStatusTask) {
     }
 }
 
-task(uploadBootJarFiles){
+task deployLookupService(){
+    dependsOn subprojects.build
     dependsOn waitInstanceStatusStable
     doLast{
         exec {
-            println "Copying GlobeReplicator to the EC2 instance"
+            println "Copying LookupService to the EC2 instance"
             commandLine "scp",
                     "-o", "stricthostkeychecking=no",
-                    "build/libs/GlobeReplicator-all.jar",
+                    "LookupService/build/libs/LookupService-all.jar",
                     "ubuntu@${awsInstanceURL}:~"
+        }
+        // wait for java to be installed
+        sleep(60 * 1000)
+        exec {
+            println "Starting Lookup Service on the EC2 instance"
+            commandLine "ssh",
+                    "-o", "stricthostkeychecking=no",
+                    "ubuntu@${awsInstanceURL}",
+                    "nohup java -jar ~/LookupService-all.jar > ~/LookupService.log 2>&1 &"
         }
     }
 }
 
-task deployApplication(){
-    dependsOn uploadBootJarFiles
+task deployDistributedObject(){
+    dependsOn subprojects.build
+    dependsOn waitInstanceStatusStable
     doLast{
+        exec {
+            println "Copying Distributed Object to the EC2 instance"
+            commandLine "scp",
+                    "-o", "stricthostkeychecking=no",
+                    "DistributedObject/build/libs/DistributedObject-all.jar",
+                    "ubuntu@${awsInstanceURL}:~"
+        }
         // wait for java to be installed
         sleep(60 * 1000)
         exec {
-            println "Starting Globe Replicator on the EC2 instance"
+            println "Starting Distributed Object on the EC2 instance"
             commandLine "ssh",
                     "-o", "stricthostkeychecking=no",
                     "ubuntu@${awsInstanceURL}",
-                    "nohup java -jar ~/GlobeReplicator-all.jar > ~/GlobeReplicator.log 2>&1 &"
+                    "nohup java -jar ~/DistributedObject-all.jar > ~/DistributedObject.log 2>&1 &"
         }
     }
 }

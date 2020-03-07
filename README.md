@@ -18,6 +18,10 @@ The instance ID of this deployed EC2 instance can be found in the AWS console or
 The instance can be terminated through Gradle with:
 `./gradlew terminateEC2Instance -PinstanceID=<instanceID of deployed EC2 instance>`
 
-In order to deploy and start the main instance application, use the following Gradle task:
-`./gradlew deployApplication -PinstanceID=<instanceID of deployed EC2 instance>`
-This will build the project, create the executable jar file, upload it to the EC2 instance and launch the Globe Replicator application.
+In order to deploy and start the Lookup Service, use the following Gradle task:
+`./gradlew deployLookupService -PinstanceID=<instanceID of deployed EC2 instance>`
+This will build the project, create the executable jar file, upload it to the EC2 instance and launch the Lookup Service application.
+
+In order to deploy and start a Distributed Object, use the following Gradle task:
+`./gradlew deployDistributedObject -PinstanceID=<instanceID of deployed EC2 instance>`
+This will build the project, create the executable jar file, upload it to the EC2 instance and launch the Distributed Object application. A different EC2 instance should be used here, with a different instanceID from the one used for the Lookup Service.
