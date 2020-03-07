@@ -1,5 +1,11 @@
+import jp.classmethod.aws.gradle.ec2.AmazonEC2RunInstanceTask;
+import jp.classmethod.aws.gradle.ec2.AmazonEC2TerminateInstanceTask;
+import jp.classmethod.aws.gradle.ec2.AmazonEC2WaitInstanceStatusTask;
+
 plugins {
     id 'scala'
+    id 'application'
+    id "com.github.johnrengelman.shadow" version "5.2.0"
     id "jp.classmethod.aws.ec2" version "0.41"
 }
 
@@ -15,16 +21,27 @@ dependencies {
     testImplementation 'org.scalatestplus:junit-4-12_2.13:3.1.0.0'
 }
 
+application {
+    mainClassName = 'com.github.arucard21.globe.replicator.HelloWorld'
+}
+
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'com.github.arucard21.globe.replicator.HelloWorld'
+        )
+    }
+}
 
 aws {
     profileName = 'default'
-    region = 'eu-west-3'
+    region = 'us-east-1'
 }
 
 ext.awsInstanceURL = "";
 
 task deployEC2Instance(type: AmazonEC2RunInstanceTask) {
-    ami "ami-0a2ca21adb4a04084" //Ubuntu Server 18.04 on eu-west-3 (Paris)
+    ami "ami-017a55663bff3fb20" //Ubuntu Server 19.10 on us-east-1 (N. Virginia)
     keyName "globeReplicator"
     instanceType "t2.micro"
     userData "#!/bin/bash\n" + "apt update\n" + "apt install -y openjdk-11-jre\n"
@@ -50,10 +67,10 @@ task(uploadBootJarFiles){
     dependsOn waitInstanceStatusStable
     doLast{
         exec {
-            println "Copying app-orchestrator, load-balancer and main-instance to the EC2 instance"
+            println "Copying GlobeReplicator to the EC2 instance"
             commandLine "scp",
                     "-o", "stricthostkeychecking=no",
-                    "build/libs/globeReplicator.jar",
+                    "build/libs/GlobeReplicator-all.jar",
                     "ubuntu@${awsInstanceURL}:~"
         }
     }
@@ -69,7 +86,7 @@ task deployApplication(){
             commandLine "ssh",
                     "-o", "stricthostkeychecking=no",
                     "ubuntu@${awsInstanceURL}",
-                    "nohup java -jar ~/globeReplicator.jar > ~/globeReplicator.log 2>&1 &"
+                    "nohup java -jar ~/GlobeReplicator-all.jar > ~/GlobeReplicator.log 2>&1 &"
         }
     }
 }
