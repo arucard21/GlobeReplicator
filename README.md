@@ -6,7 +6,7 @@ In order to deploy an EC2 instance with Gradle, the following need to be configu
 - Your credentials must be available from a [default location](https://docs.aws.amazon.com/sdk-for-java/v2/developer-guide/credentials.html) (e.g. ~/.aws/credentials) with a profile named "default"
 - You must have `ssh` and `scp` installed on your local machine
 - The public key for your local SSH instance must be [imported into AWS EC2 configuration](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#how-to-generate-your-own-key-and-import-it-to-aws) as KeyPair with the name "globeReplicator"
-- An EC2 Security Group with name "default" must be available and configured to allow inbound TCP traffic on port 22 (for SSH)
+- An EC2 Security Group with name "default" must be available and configured to allow inbound TCP traffic on port 22 (for SSH) and port 8080 (for RPC communication)
 
 Since we use system tools with Gradle, this will work best on a Linux system with these tools installed.
 
@@ -63,4 +63,23 @@ Example:
 ```
 $ curl http://localhost:8080/getLocations/5deb8ac1-d396-467c-8f64-3d5d53914280
 ["http://localhost:8081"]
+```
+
+### Distributed Object
+Retrieve the current number stored in the distributed object:
+Send a GET request to the Distributed Object with path `getNumber`.
+
+Example:
+```
+$ curl http://localhost:8080/getNumber
+0
+```
+
+Store a different number in the distributed object:
+Send a GET request to the Distributed Object with path `setNumber/<new number>`
+
+Example:
+```
+$ curl http://localhost:8080/setNumber/2
+The number of this distributed object has been updated from 0 to 2
 ```

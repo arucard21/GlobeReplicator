@@ -5,8 +5,8 @@ import org.junit.runner.RunWith
 import org.scalatestplus.junit.JUnitRunner
 
 @RunWith(classOf[JUnitRunner])
-class HelloWorldTest extends AnyFunSuite {
-  test("helloWorldMethod has correct text") {
-    assert(HelloWorld.helloWorldMethod() == "Hello World from Distributed Object!")
+class DistributedObjectTest extends AnyFunSuite {
+  test("This is a dummy test") {
+    assert(true)
   }
 }

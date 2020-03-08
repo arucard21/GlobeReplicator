@@ -1,11 +1,11 @@
 application {
-    mainClassName = 'com.github.arucard21.globe.replicator.distributedobject.HelloWorld'
+    mainClassName = 'com.github.arucard21.globe.replicator.distributedobject.DOApplication'
 }
 
 jar {
     manifest {
         attributes(
-                'Main-Class': 'com.github.arucard21.globe.replicator.distributedobject.HelloWorld'
+                'Main-Class': 'com.github.arucard21.globe.replicator.distributedobject.DOApplication'
         )
     }
 }

@@ -21,11 +21,7 @@ object LSServer extends HttpApp {
   var locations: mutable.Map[UUID, Array[URI]] = mutable.Map[UUID, Array[URI]]()
   val mapper = new ObjectMapper()
   mapper.registerModule(DefaultScalaModule)
-  /*
-  register(objectName, objectLocation)
-  getId(objectName)
-  getLocations(objectId)
-  */
+
   override protected def routes: Route =
     Directives.concat(
       Directives.pathPrefix("getId" / Segment) { name =>
