@@ -1,6 +1,6 @@
 import jp.classmethod.aws.gradle.ec2.AmazonEC2RunInstanceTask;
 import jp.classmethod.aws.gradle.ec2.AmazonEC2TerminateInstanceTask;
-import jp.classmethod.aws.gradle.ec2.AmazonEC2WaitInstanceStatusTask;
+import jp.classmethod.aws.gradle.ec2.AmazonEC2WaitInstanceStatusTask
 
 plugins {
     id "java"
@@ -27,6 +27,8 @@ subprojects {
     }
 }
 
+def latestInstanceId
+
 aws {
     profileName = 'default'
     region = 'us-east-1'
@@ -34,33 +36,54 @@ aws {
 
 ext.awsInstanceURL = "";
 
+task waitInstanceStatusStable (type: AmazonEC2WaitInstanceStatusTask) {
+    doFirst{
+        instanceId = latestInstanceId
+    }
+    doLast{
+        println "Access instance with: ssh ubuntu@" + awsInstance.getPublicDnsName()
+        awsInstanceURL = awsInstance.getPublicDnsName()
+    }
+}
+
 task deployEC2Instance(type: AmazonEC2RunInstanceTask) {
     ami "ami-017a55663bff3fb20" //Ubuntu Server 19.10 on us-east-1 (N. Virginia)
     keyName "globeReplicator"
     instanceType "t2.micro"
     userData "#!/bin/bash\n" + "apt update\n" + "apt install -y openjdk-11-jre\n"
-}
+    finalizedBy waitInstanceStatusStable
+    doLast{
+        String instanceId = runInstancesResult.getReservation().getInstances().get(0).getInstanceId();
+        latestInstanceId = instanceId
 
-task terminateEC2Instance(type: AmazonEC2TerminateInstanceTask) {
-    if(project.hasProperty("instanceID")){
-        instanceIds += project.property("instanceID")
+        File instanceIds = file("instanceIds")
+        if(instanceIds.exists()){
+            // subsequent ids are distributed object ids
+            instanceIds.setText(instanceIds.getText() + "\n" + instanceId)
+        }
+        else{
+            // first id is lookup service instance id
+            instanceIds.setText(instanceId)
+        }
     }
 }
 
-task waitInstanceStatusStable(type: AmazonEC2WaitInstanceStatusTask) {
-    if(project.hasProperty("instanceID")){
-        instanceId = project.property("instanceID")
-        doLast {
-            println "Access instance with: ssh ubuntu@" + awsInstance.getPublicDnsName()
-            awsInstanceURL = awsInstance.getPublicDnsName()
+task terminateEC2Instances(type: AmazonEC2TerminateInstanceTask) {
+    doFirst{
+        File instances = file("instanceIds")
+        if(instances.exists()) {
+            instances.eachLine { line -> instanceIds += line }
+            instances.delete()
         }
     }
 }
 
 task deployLookupService(){
     dependsOn subprojects.build
-    dependsOn waitInstanceStatusStable
+    dependsOn deployEC2Instance
     doLast{
+        // wait for java to be installed
+        sleep(60 * 1000)
         exec {
             println "Copying LookupService to the EC2 instance"
             commandLine "scp",
@@ -68,8 +91,6 @@ task deployLookupService(){
                     "LookupService/build/libs/LookupService-all.jar",
                     "ubuntu@${awsInstanceURL}:~"
         }
-        // wait for java to be installed
-        sleep(60 * 1000)
         exec {
             println "Starting Lookup Service on the EC2 instance"
             commandLine "ssh",
@@ -82,8 +103,10 @@ task deployLookupService(){
 
 task deployDistributedObject(){
     dependsOn subprojects.build
-    dependsOn waitInstanceStatusStable
+    dependsOn deployEC2Instance
     doLast{
+        // wait for java to be installed
+        sleep(60 * 1000)
         exec {
             println "Copying Distributed Object to the EC2 instance"
             commandLine "scp",
@@ -91,8 +114,6 @@ task deployDistributedObject(){
                     "DistributedObject/build/libs/DistributedObject-all.jar",
                     "ubuntu@${awsInstanceURL}:~"
         }
-        // wait for java to be installed
-        sleep(60 * 1000)
         exec {
             println "Starting Distributed Object on the EC2 instance"
             commandLine "ssh",
