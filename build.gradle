@@ -1,6 +1,7 @@
 import jp.classmethod.aws.gradle.ec2.AmazonEC2RunInstanceTask;
 import jp.classmethod.aws.gradle.ec2.AmazonEC2TerminateInstanceTask;
 import jp.classmethod.aws.gradle.ec2.AmazonEC2WaitInstanceStatusTask
+import com.github.jengelman.gradle.plugins.shadow.transformers.AppendingTransformer
 
 plugins {
     id "java"
@@ -18,12 +19,22 @@ subprojects {
         mavenCentral()
     }
 
+    shadowJar {
+        transform(AppendingTransformer) {
+            resource = 'reference.conf'
+        }
+        with jar
+    }
+
     dependencies {
-        implementation 'org.scala-lang:scala-library:2.13.1'
+        implementation 'org.scala-lang:scala-library:2.12.10'
+        implementation 'com.typesafe.akka:akka-http_2.12:10.1.11'
+        implementation 'com.typesafe.akka:akka-stream_2.12:2.5.26'
+        implementation("com.fasterxml.jackson.module:jackson-module-scala_2.12:2.10.3")
 
         testImplementation 'junit:junit:4.12'
-        testImplementation 'org.scalatest:scalatest_2.13:3.1.0'
-        testImplementation 'org.scalatestplus:junit-4-12_2.13:3.1.0.0'
+        testImplementation 'org.scalatest:scalatest_2.12:3.1.1'
+        testImplementation 'org.scalatestplus:junit-4-12_2.12:3.1.1.0'
     }
 }
 

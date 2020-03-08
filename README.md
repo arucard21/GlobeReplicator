@@ -36,3 +36,31 @@ There is a Linux shell script to deploy the entire distributed system with a con
 ``` 
 This will deploy the Lookup Service and deploy the configured amount of Distributed Object instances. For example, `./deploySystem 3` will deploy 1 Lookup Service instance and 3 Distributed Object instances for a total of 4 EC2 instances. 
 Since this is a Bash-based script, it requires `bash` to be installed on the local machine.
+
+### Lookup Service
+Register a new location for a (possibly new) distributed object. 
+Send a POST request with a JSON body containing the name and location for this new replica of the distributed object.
+
+Example:
+```
+$ curl --data "{\"name\": \"test\", \"location\": \"http://localhost:8081\"}" http:/localhost:8080/register
+This replica of the distributed object has been registered successfully
+```
+
+Retrieve the ID for the distributed object based on its name:
+Send a GET request to the Lookup Service with path `getId/<name of distributed object>`.
+
+Example:
+```
+$ curl http://localhost:8080/getId/test
+5deb8ac1-d396-467c-8f64-3d5d53914280
+```
+
+Retrieve the locations for the distributed object based on its ID:
+Send a GET request to the Lookup Service with path `getLocations/<id of distributed object>`
+
+Example:
+```
+$ curl http://localhost:8080/getLocations/5deb8ac1-d396-467c-8f64-3d5d53914280
+["http://localhost:8081"]
+```

@@ -5,8 +5,8 @@ import org.scalatest.funsuite.AnyFunSuite
 import org.scalatestplus.junit.JUnitRunner
 
 @RunWith(classOf[JUnitRunner])
-class HelloWorldTest extends AnyFunSuite {
-  test("helloWorldMethod has correct text") {
-    assert(HelloWorld.helloWorldMethod() == "Hello World from Lookup Service!")
+class LookupServiceTest extends AnyFunSuite {
+  test("this is just a dummy test") {
+    assert(true )
   }
 }
