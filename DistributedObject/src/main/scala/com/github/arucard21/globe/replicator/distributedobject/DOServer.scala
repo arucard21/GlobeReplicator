@@ -17,19 +17,19 @@ object DOServer extends HttpApp {
     Directives.concat(
       Directives.path("getNumber") {
         Directives.get {
-          Directives.complete(HttpEntity(ContentTypes.`text/plain(UTF-8)`, ControlSubobject.getState))
+          Directives.complete(HttpEntity(ContentTypes.`text/plain(UTF-8)`, ControlSubobject.getNumber.toString))
         }
       },
       Directives.pathPrefix("setNumber" / IntNumber) { newNumber =>
         Directives.post {
           Directives.complete{
-            val prevNumber = ControlSubobject.getState.toInt
+            val prevNumber = ControlSubobject.getNumber
             if (prevNumber == newNumber){
               HttpEntity(ContentTypes.`text/plain(UTF-8)`, "The number of this distributed object did not need to be updated. It was already set to " + prevNumber.toString)
             }
             else{
-              ControlSubobject.setState(newNumber)
-              val number = ControlSubobject.getState.toInt
+              ControlSubobject.setNumber(newNumber)
+              val number = ControlSubobject.getNumber
                 if (number == prevNumber){
                 HttpResponse(StatusCodes.InternalServerError, entity = "The change could not be applied (it might not have been replicated correctly)")
               }

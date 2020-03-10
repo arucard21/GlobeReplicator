@@ -6,12 +6,20 @@ object ControlSubobject {
     ???
   }
 
+  def getNumber = {
+    SemanticsSubobject.number
+  }
+
+  // FIXME replace this with actual Globe replication mechanism
+  def setNumber (newNumber : Integer) = {
+    SemanticsSubobject.number = newNumber
+  }
+
   def getState = {
     SemanticsSubobject.number.toString
   }
 
-  // FIXME replace this with actual Globe replication mechanism
-  def setState (newNumber : Integer) = {
-    SemanticsSubobject.number = newNumber
+  def setState (newState : String) = {
+    SemanticsSubobject.number = newState.toInt
   }
 }
