@@ -38,6 +38,8 @@ This will deploy the Lookup Service and deploy the configured amount of Distribu
 Since this is a Bash-based script, it requires `bash` to be installed on the local machine.
 
 ### Lookup Service
+You can run this locally with `./gradlew :LookupService:run` from the GlobeReplicator root directory or `./gradlew run` from the LookupService subdirectory. 
+
 Register a new location for a (possibly new) distributed object. 
 Send a POST request with a JSON body containing the name and location for this new replica of the distributed object.
 
@@ -66,6 +68,8 @@ $ curl http://localhost:8080/getLocations/5deb8ac1-d396-467c-8f64-3d5d53914280
 ```
 
 ### Distributed Object
+You can run this locally with `./gradlew :DistributedObject:run` from the GlobeReplicator directory or `./gradlew run` from the DistributedObject subdirectory.
+
 Retrieve the current number stored in the distributed object:
 Send a GET request to the Distributed Object with path `getNumber`.
 
