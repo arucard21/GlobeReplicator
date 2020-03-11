@@ -26,6 +26,11 @@ subprojects {
         with jar
     }
 
+    run {
+        systemProperty "lookupservice.url", project.hasProperty("lookupservice.url") ? project.getProperty("lookupservice.url") : "http://localhost:8080"
+        systemProperty "distributedobject.url", project.hasProperty("distributedobject.url") ? project.getProperty("distributedobject.url") : "http://localhost:8080"
+    }
+
     dependencies {
         implementation 'org.scala-lang:scala-library:2.12.10'
         implementation 'com.typesafe.akka:akka-http_2.12:10.1.11'
@@ -86,6 +91,7 @@ task terminateEC2Instances(type: AmazonEC2TerminateInstanceTask) {
             instances.eachLine { line -> instanceIds += line }
             instances.delete()
         }
+        file("lookupServiceHostname").delete()
     }
 }
 
@@ -109,6 +115,7 @@ task deployLookupService(){
                     "ubuntu@${awsInstanceURL}",
                     "nohup java -jar ~/LookupService-all.jar > ~/LookupService.log 2>&1 &"
         }
+        file("lookupServiceHostname").setText(awsInstanceURL)
     }
 }
 
@@ -116,6 +123,7 @@ task deployDistributedObject(){
     dependsOn subprojects.build
     dependsOn deployEC2Instance
     doLast{
+        def lookupServiceHost = file("lookupServiceHostname").getText()
         // wait for java to be installed
         sleep(60 * 1000)
         exec {
@@ -130,7 +138,7 @@ task deployDistributedObject(){
             commandLine "ssh",
                     "-o", "stricthostkeychecking=no",
                     "ubuntu@${awsInstanceURL}",
-                    "nohup java -jar ~/DistributedObject-all.jar > ~/DistributedObject.log 2>&1 &"
+                    "nohup java -Dlookupservice.url=http://${lookupServiceHost}:8080 -Ddistributedobject.url=http://${awsInstanceURL}:8080 -jar ~/DistributedObject-all.jar > ~/DistributedObject.log 2>&1 &"
         }
     }
 }
