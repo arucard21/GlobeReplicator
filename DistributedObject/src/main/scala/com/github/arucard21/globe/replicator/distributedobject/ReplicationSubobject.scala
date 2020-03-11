@@ -18,4 +18,11 @@ object ReplicationSubobject {
     ???
   }
 
+  def acquireLock: Boolean = {
+    ???
+  }
+
+  def releaseLock:Boolean = {
+    ???
+  }
 }
