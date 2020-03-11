@@ -2,7 +2,7 @@ package com.github.arucard21.globe.replicator.distributedobject
 
 object ControlSubobject {
 
-  def handle_request = {
+  def handle_request(method : String, parameter: Int) = {
     ???
   }
 

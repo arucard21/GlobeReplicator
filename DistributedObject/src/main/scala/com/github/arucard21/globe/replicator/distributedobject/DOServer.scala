@@ -7,7 +7,7 @@ import akka.http.scaladsl.server.{Directives, HttpApp, Route}
 import com.fasterxml.jackson.databind.{ObjectMapper}
 import com.fasterxml.jackson.module.scala.DefaultScalaModule
 
-case class Registration(name: String, location: URI)
+case class RequestFromOtherObject(method: String, parameter: Int)
 
 object DOServer extends HttpApp {
   val mapper = new ObjectMapper()
@@ -15,6 +15,19 @@ object DOServer extends HttpApp {
 
   override protected def routes: Route =
     Directives.concat(
+      Directives.pathSingleSlash {
+        Directives.post {
+          Directives.decodeRequest{
+            Directives.entity(Directives.as[String]){ requestContent =>
+              Directives.complete{
+                val requestData = mapper.readValue[RequestFromOtherObject](requestContent, classOf[RequestFromOtherObject])
+                ControlSubobject.handle_request(requestData.method, requestData.parameter)
+                HttpEntity(ContentTypes.`text/plain(UTF-8)`, "Request handles successfully")
+              }
+            }
+          }
+        }
+      },
       Directives.path("getNumber") {
         Directives.get {
           Directives.complete(HttpEntity(ContentTypes.`text/plain(UTF-8)`, ControlSubobject.getNumber.toString))
