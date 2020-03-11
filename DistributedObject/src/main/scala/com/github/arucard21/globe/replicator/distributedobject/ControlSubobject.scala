@@ -3,7 +3,12 @@ package com.github.arucard21.globe.replicator.distributedobject
 object ControlSubobject {
 
   def handle_request(method : String, parameter: Int) = {
-    ???
+    if(method == "setNumber"){
+      SemanticsSubobject.number = parameter
+    }
+    else{
+      throw new IllegalStateException("Could not handle the request with unknown method: " + method)
+    }
   }
 
   def getNumber = {
