@@ -10,5 +10,6 @@ echo "Deploying Lookup Service "
 for i in $(seq 1 $1)
 do
 	echo "Deploying Distributed Object $i"
+	sleep 1
 	./gradlew deployDistributedObject
 done
