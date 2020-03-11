@@ -10,5 +10,5 @@ import scala.concurrent.ExecutionContextExecutor
 import scala.io.StdIn
 
 object LSApplication extends App {
-  LSServer.startServer("localhost", 8080)
+  LSServer.startServer("0.0.0.0", 8080)
 }
