@@ -1,14 +1,13 @@
-import jp.classmethod.aws.gradle.ec2.AmazonEC2RunInstanceTask;
-import jp.classmethod.aws.gradle.ec2.AmazonEC2TerminateInstanceTask;
-import jp.classmethod.aws.gradle.ec2.AmazonEC2WaitInstanceStatusTask
-import com.github.jengelman.gradle.plugins.shadow.transformers.AppendingTransformer
-
 plugins {
     id "java"
     id "com.github.johnrengelman.shadow" version "5.2.0"
     id "jp.classmethod.aws.ec2" version "0.41"
 }
 
+import jp.classmethod.aws.gradle.ec2.AmazonEC2RunInstanceTask;
+import jp.classmethod.aws.gradle.ec2.AmazonEC2TerminateInstanceTask;
+import jp.classmethod.aws.gradle.ec2.AmazonEC2WaitInstanceStatusTask
+import com.github.jengelman.gradle.plugins.shadow.transformers.AppendingTransformer
 
 subprojects {
     apply plugin : 'scala'
@@ -43,14 +42,16 @@ subprojects {
     }
 }
 
+def instanceIdsFileName = "instanceIds"
+def lookupServiceUrlFileName = "lookupServiceUrl"
 def latestInstanceId
+def awsInstanceURL
 
 aws {
     profileName = 'default'
     region = 'us-east-1'
 }
 
-ext.awsInstanceURL = "";
 
 task waitInstanceStatusStable (type: AmazonEC2WaitInstanceStatusTask) {
     doFirst{
@@ -72,7 +73,7 @@ task deployEC2Instance(type: AmazonEC2RunInstanceTask) {
         String instanceId = runInstancesResult.getReservation().getInstances().get(0).getInstanceId();
         latestInstanceId = instanceId
 
-        File instanceIds = file("instanceIds")
+        File instanceIds = file(instanceIdsFileName)
         if(instanceIds.exists()){
             // subsequent ids are distributed object ids
             instanceIds.setText(instanceIds.getText() + "\n" + instanceId)
@@ -86,12 +87,12 @@ task deployEC2Instance(type: AmazonEC2RunInstanceTask) {
 
 task terminateEC2Instances(type: AmazonEC2TerminateInstanceTask) {
     doFirst{
-        File instances = file("instanceIds")
+        File instances = file(instanceIdsFileName)
         if(instances.exists()) {
             instances.eachLine { line -> instanceIds += line }
             instances.delete()
         }
-        file("lookupServiceHostname").delete()
+        file(lookupServiceUrlFileName).delete()
     }
 }
 
@@ -115,7 +116,7 @@ task deployLookupService(){
                     "ubuntu@${awsInstanceURL}",
                     "nohup java -jar ~/LookupService-all.jar > ~/LookupService.log 2>&1 &"
         }
-        file("lookupServiceHostname").setText(awsInstanceURL)
+        file(lookupServiceUrlFileName).setText("http://${awsInstanceURL}:8080")
     }
 }
 
@@ -123,7 +124,7 @@ task deployDistributedObject(){
     dependsOn subprojects.build
     dependsOn deployEC2Instance
     doLast{
-        def lookupServiceHost = file("lookupServiceHostname").getText()
+        def lookupServiceUrl = file(lookupServiceUrlFileName).getText()
         // wait for java to be installed
         sleep(60 * 1000)
         exec {
@@ -138,7 +139,7 @@ task deployDistributedObject(){
             commandLine "ssh",
                     "-o", "stricthostkeychecking=no",
                     "ubuntu@${awsInstanceURL}",
-                    "nohup java -Dlookupservice.url=http://${lookupServiceHost}:8080 -Ddistributedobject.url=http://${awsInstanceURL}:8080 -jar ~/DistributedObject-all.jar > ~/DistributedObject.log 2>&1 &"
+                    "nohup java -Dlookupservice.url=${lookupServiceUrl} -Ddistributedobject.url=http://${awsInstanceURL}:8080 -jar ~/DistributedObject-all.jar > ~/DistributedObject.log 2>&1 &"
         }
     }
 }
