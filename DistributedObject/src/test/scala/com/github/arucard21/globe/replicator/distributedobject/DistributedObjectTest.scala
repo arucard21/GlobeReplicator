@@ -1,5 +1,8 @@
 package com.github.arucard21.globe.replicator.distributedobject
 
+import java.nio.charset.StandardCharsets
+import java.nio.file.{Files, Paths, StandardOpenOption}
+import java.util.Arrays
 import java.util.UUID
 
 import akka.actor.ActorSystem
@@ -17,8 +20,12 @@ import org.scalatestplus.junit.JUnitRunner
 
 import scala.concurrent.duration.Duration
 import scala.concurrent.{Await, Future}
-import scala.util.{Failure, Random, Success}
+import scala.util.Random
 
+/**
+ * These tests require the Lookup Service to be running and its URL provided as a property with the name "lookupservice.url".
+ * There also need to be at least 2 Distributed Object instances running, both of which should be registered with the Lookup Service.
+ */
 @RunWith(classOf[JUnitRunner])
 class DistributedObjectTest extends AnyFunSuite with BeforeAndAfter {
   implicit val system: ActorSystem = ActorSystem()
@@ -97,13 +104,24 @@ class DistributedObjectTest extends AnyFunSuite with BeforeAndAfter {
 
   test("setNumber should correctly replicate to all other objects (scalability evaluation test)") {
     val newNumber : Int = Random.nextInt(1000)
-    if (setNumberForDistributedObject(objectLocations(0), newNumber)){
+    val beginTime = System.currentTimeMillis()
+    val setNumberResult = setNumberForDistributedObject(objectLocations(0), newNumber)
+    val endTime = System.currentTimeMillis()
+    if (setNumberResult){
       objectLocations.foreach(location => {
         assertResult(newNumber, s"The object at $location does not contain the new number"){
           getNumberForDistributedObject(location)
         }
       })
     }
+    val responseTimeInMillis = endTime - beginTime
+    val filename = "responseTimes.csv"
+    val file = Paths.get(filename)
+    if(Files.notExists(file)){
+      // write header row
+      Files.write(Paths.get(filename), Arrays.asList("objectCount, responseTime(ms)"), StandardCharsets.UTF_8)
+    }
+    Files.write(Paths.get(filename), Arrays.asList(s"${objectLocations.size.toString}, $responseTimeInMillis"), StandardCharsets.UTF_8, StandardOpenOption.APPEND)
   }
 
   test("setNumber on 2 different objects in the same distributed object concurrently should both fail (concurrency evaluation test)") {

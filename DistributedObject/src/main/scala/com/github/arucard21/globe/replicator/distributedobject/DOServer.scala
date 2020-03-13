@@ -1,7 +1,5 @@
 package com.github.arucard21.globe.replicator.distributedobject
 
-import java.net.URI
-
 import akka.http.scaladsl.model.{ContentTypes, HttpEntity, HttpResponse, StatusCodes}
 import akka.http.scaladsl.server.{Directives, HttpApp, Route}
 import com.fasterxml.jackson.databind.ObjectMapper
