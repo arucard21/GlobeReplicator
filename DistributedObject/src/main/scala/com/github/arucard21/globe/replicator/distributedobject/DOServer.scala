@@ -4,13 +4,13 @@ import java.net.URI
 
 import akka.http.scaladsl.model.{ContentTypes, HttpEntity, HttpResponse, StatusCodes}
 import akka.http.scaladsl.server.{Directives, HttpApp, Route}
-import com.fasterxml.jackson.databind.{ObjectMapper}
-import com.fasterxml.jackson.module.scala.DefaultScalaModule
+import com.fasterxml.jackson.databind.ObjectMapper
+import com.fasterxml.jackson.module.scala.{DefaultScalaModule, ScalaObjectMapper}
 
 case class RequestFromOtherObject(method: String, parameter: Int)
 
 object DOServer extends HttpApp {
-  val mapper = new ObjectMapper()
+  val mapper = new ObjectMapper() with ScalaObjectMapper
   mapper.registerModule(DefaultScalaModule)
 
   /*
@@ -38,7 +38,7 @@ object DOServer extends HttpApp {
           Directives.decodeRequest{
             Directives.entity(Directives.as[String]){ requestContent =>
               Directives.complete{
-                val requestData = mapper.readValue[RequestFromOtherObject](requestContent, classOf[RequestFromOtherObject])
+                val requestData = mapper.readValue[RequestFromOtherObject](requestContent)
                 ControlSubobject.handle_request(requestData.method, requestData.parameter)
                 HttpEntity(ContentTypes.`text/plain(UTF-8)`, "Request handles successfully")
               }

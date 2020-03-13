@@ -8,7 +8,7 @@ import akka.http.scaladsl.model.Uri.Path
 import akka.http.scaladsl.model.{HttpMethods, HttpRequest, HttpResponse, StatusCodes, Uri}
 import akka.stream.ActorMaterializer
 import com.fasterxml.jackson.databind.ObjectMapper
-import com.fasterxml.jackson.module.scala.DefaultScalaModule
+import com.fasterxml.jackson.module.scala.{DefaultScalaModule, ScalaObjectMapper}
 
 import scala.concurrent.Future
 import scala.util.Try
@@ -20,7 +20,7 @@ object CommunicationSubobject {
   implicit val materializer: ActorMaterializer = ActorMaterializer()
   implicit val executionContext = system.dispatcher
 
-  val mapper = new ObjectMapper()
+  val mapper = new ObjectMapper() with ScalaObjectMapper
   mapper.registerModule(DefaultScalaModule)
 
   def send_request = {

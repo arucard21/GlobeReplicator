@@ -8,25 +8,35 @@ import scala.sys.SystemProperties
 import scala.util.{Failure, Success}
 
 object DOApplication extends App {
-  val PropertyKeyLookupServiceUrl : String = "lookupservice.url"
-  val PropertyKeyDistributedObjectUrl : String = "distributedobject.url"
-  val DistributedObjectName = "test"
+  val distributedObjectName = "test"
 
-  val props = new SystemProperties
-  var lsUrl = if (props contains PropertyKeyLookupServiceUrl) props(PropertyKeyLookupServiceUrl) else "http://localhost:8080"
-  val lookupServiceUri : URI = URI.create(lsUrl)
-  var doUrl = if (props contains PropertyKeyDistributedObjectUrl) props(PropertyKeyDistributedObjectUrl) else "http://localhost:8080"
-  val distributedObjectUri : URI = URI.create(doUrl)
+  val lookupServiceUri = getLookupServiceUri
+  val distributedObjectUri = getDistributedObjectUri
+
+  def getLookupServiceUri = {
+    val propertyKeyLookupServiceUrl : String = "lookupservice.url"
+    val props = new SystemProperties
+    val lsUrl = if (props contains propertyKeyLookupServiceUrl) props(propertyKeyLookupServiceUrl) else "http://localhost:8080"
+    URI.create(lsUrl)
+  }
+
+  def getDistributedObjectUri = {
+    val propertyKeyDistributedObjectUrl : String = "distributedobject.url"
+    val props = new SystemProperties
+    val doUrl = if (props contains propertyKeyDistributedObjectUrl) props(propertyKeyDistributedObjectUrl) else "http://localhost:8080"
+    URI.create(doUrl)
+  }
+
   CommunicationSubobject.register(
     lookupServiceUri,
-    DistributedObjectName,
+    distributedObjectName,
     distributedObjectUri,
     {
       case Success(response) =>
         if (response.status == StatusCodes.OK)
           DOServer.startServer("0.0.0.0", distributedObjectUri.getPort)
         else
-          println(s"""The registration of the distributed object with name "$DistributedObjectName" and location "$distributedObjectUri" failed on the lookup service at: $lookupServiceUri""")
-      case Failure(_) => println(s"""The request for the registration of the distributed object with name "$DistributedObjectName" and location "$distributedObjectUri" failed on the lookup service at: $lookupServiceUri""")
+          println(s"""The registration of the distributed object with name "$distributedObjectName" and location "$distributedObjectUri" failed on the lookup service at: $lookupServiceUri""")
+      case Failure(_) => println(s"""The request for the registration of the distributed object with name "$distributedObjectName" and location "$distributedObjectUri" failed on the lookup service at: $lookupServiceUri""")
     })
   }

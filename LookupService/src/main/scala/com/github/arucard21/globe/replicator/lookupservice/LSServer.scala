@@ -7,7 +7,7 @@ import akka.http.scaladsl.model.{ContentTypes, HttpEntity, HttpResponse, StatusC
 import akka.http.scaladsl.server.{Directives, HttpApp, Route}
 import com.fasterxml.jackson.core.JsonProcessingException
 import com.fasterxml.jackson.databind.{JsonMappingException, ObjectMapper}
-import com.fasterxml.jackson.module.scala.DefaultScalaModule
+import com.fasterxml.jackson.module.scala.{DefaultScalaModule, ScalaObjectMapper}
 
 import scala.collection.mutable
 
@@ -19,7 +19,7 @@ object LSServer extends HttpApp {
   var ids: mutable.Map[String, UUID] = mutable.Map[String, UUID]()
   // Contains mapping from id to list of locations
   var locations: mutable.Map[UUID, Array[URI]] = mutable.Map[UUID, Array[URI]]()
-  val mapper = new ObjectMapper()
+  val mapper = new ObjectMapper() with ScalaObjectMapper
   mapper.registerModule(DefaultScalaModule)
 
   override protected def routes: Route =
@@ -61,7 +61,7 @@ object LSServer extends HttpApp {
             Directives.entity(as[String]) { registrationJson =>
               Directives.complete {
                 try{
-                  val registration = mapper.readValue[Registration](registrationJson, classOf[Registration])
+                  val registration = mapper.readValue[Registration](registrationJson)
                   // add a newly generated id for this new name and initialize the list of locations for it
                   if (!(ids contains registration.name)) {
                     val objectId = UUID.randomUUID()
