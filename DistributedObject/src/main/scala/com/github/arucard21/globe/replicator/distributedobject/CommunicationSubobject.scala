@@ -10,8 +10,8 @@ import akka.stream.ActorMaterializer
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.scala.DefaultScalaModule
 
-import scala.concurrent.duration.Duration
-import scala.concurrent.{Await, Future}
+import scala.concurrent.Future
+import scala.util.Try
 
 case class Registration(name: String, location: URI)
 
@@ -27,7 +27,7 @@ object CommunicationSubobject {
     ???
   }
 
-  def register(lookupServiceUri : URI, name : String, location : URI): Boolean = {
+  def register(lookupServiceUri : URI, name : String, location : URI, onCompleteFunction : (Try[HttpResponse]) => Unit) = {
     val registration = new Registration(name, location)
     val registrationJson : String = mapper.writeValueAsString(registration)
     val registrationUri = Uri(lookupServiceUri.toString).withPath(Path("/register"))
@@ -37,16 +37,7 @@ object CommunicationSubobject {
       uri = registrationUri,
       entity = registrationJson
     ))
-    Await.result(
-      responseFuture.map { response =>
-        if (response.status == StatusCodes.OK){
-          true
-        }
-        else{
-          false
-        }
-      },
-      Duration.Inf)
+    responseFuture.onComplete(onCompleteFunction)
   }
 
   def acquire_lock = {
