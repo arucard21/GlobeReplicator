@@ -80,10 +80,10 @@ $ curl http://localhost:8080/getNumber
 ```
 
 Store a different number in the distributed object:
-Send a GET request to the Distributed Object with path `setNumber/<new number>`
+Send a POST request to the Distributed Object with path `setNumber/<new number>`
 
 Example:
 ```
-$ curl http://localhost:8080/setNumber/2
+$ curl --data "" http://localhost:8080/setNumber/2
 The number of this distributed object has been updated from 0 to 2
 ```
