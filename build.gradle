@@ -9,6 +9,13 @@ import jp.classmethod.aws.gradle.ec2.AmazonEC2TerminateInstanceTask;
 import jp.classmethod.aws.gradle.ec2.AmazonEC2WaitInstanceStatusTask
 import com.github.jengelman.gradle.plugins.shadow.transformers.AppendingTransformer
 
+def instanceIdsFileName = "instanceIds"
+def lookupServiceUrlFileName = "lookupServiceUrl"
+def lookupServiceUrlPropertyName = "lookupservice.url"
+def distributedObjectUrlPropertyName = "distributedobject.url"
+def latestInstanceId
+def awsInstanceURL
+
 subprojects {
     apply plugin : 'scala'
     apply plugin : 'application'
@@ -26,8 +33,29 @@ subprojects {
     }
 
     run {
-        systemProperty "lookupservice.url", project.hasProperty("lookupservice.url") ? project.getProperty("lookupservice.url") : "http://localhost:8080"
-        systemProperty "distributedobject.url", project.hasProperty("distributedobject.url") ? project.getProperty("distributedobject.url") : "http://localhost:8080"
+        if (project.hasProperty(lookupServiceUrlPropertyName)){
+            systemProperty lookupServiceUrlPropertyName, project.getProperty(lookupServiceUrlPropertyName)
+        }
+        else if (file(lookupServiceUrlFileName).exists()){
+            systemProperty lookupServiceUrlPropertyName, file(lookupServiceUrlFileName).getText()
+        }
+        else {
+            systemProperty lookupServiceUrlPropertyName, "http://localhost:8080"
+        }
+        systemProperty distributedObjectUrlPropertyName, project.hasProperty(distributedObjectUrlPropertyName) ? project.getProperty(distributedObjectUrlPropertyName) : "http://localhost:8080"
+    }
+
+    test {
+        if (project.hasProperty(lookupServiceUrlPropertyName)){
+            systemProperty lookupServiceUrlPropertyName, project.getProperty(lookupServiceUrlPropertyName)
+        }
+        else if (file(lookupServiceUrlFileName).exists()){
+            systemProperty lookupServiceUrlPropertyName, file(lookupServiceUrlFileName).getText()
+        }
+        else {
+            systemProperty lookupServiceUrlPropertyName, "http://localhost:8080"
+        }
+        systemProperty distributedObjectUrlPropertyName, project.hasProperty(distributedObjectUrlPropertyName) ? project.getProperty(distributedObjectUrlPropertyName) : "http://localhost:8080"
     }
 
     dependencies {
@@ -41,11 +69,6 @@ subprojects {
         testImplementation 'org.scalatestplus:junit-4-12_2.12:3.1.1.0'
     }
 }
-
-def instanceIdsFileName = "instanceIds"
-def lookupServiceUrlFileName = "lookupServiceUrl"
-def latestInstanceId
-def awsInstanceURL
 
 aws {
     profileName = 'default'
