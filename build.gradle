@@ -45,7 +45,25 @@ subprojects {
         systemProperty distributedObjectUrlPropertyName, project.hasProperty(distributedObjectUrlPropertyName) ? project.getProperty(distributedObjectUrlPropertyName) : "http://localhost:8080"
     }
 
-    test {
+    sourceSets {
+        // Note that just declaring this sourceset creates two configurations.
+        systemTest {
+            scala {
+                compileClasspath += main.output + test.output
+                runtimeClasspath += main.output + test.output
+            }
+        }
+    }
+
+    configurations {
+        systemTestImplementation.extendsFrom testImplementation
+        systemTestRuntime.extendsFrom testRuntime
+    }
+
+    task systemTest(type:Test){
+        setTestClassesDirs(project.sourceSets.systemTest.output.classesDirs)
+        classpath = project.sourceSets.systemTest.runtimeClasspath
+
         if (project.hasProperty(lookupServiceUrlPropertyName)){
             systemProperty lookupServiceUrlPropertyName, project.getProperty(lookupServiceUrlPropertyName)
         }

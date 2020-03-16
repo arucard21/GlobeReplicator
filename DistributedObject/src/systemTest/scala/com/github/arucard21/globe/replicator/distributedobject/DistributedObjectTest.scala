@@ -26,7 +26,6 @@ import scala.util.Random
  * These tests require the Lookup Service to be running and its URL provided as a property with the name "lookupservice.url".
  * There also need to be at least 2 Distributed Object instances running, both of which should be registered with the Lookup Service.
  */
-@Ignore
 @RunWith(classOf[JUnitRunner])
 class DistributedObjectTest extends AnyFunSuite with BeforeAndAfter {
   implicit val system: ActorSystem = ActorSystem()
