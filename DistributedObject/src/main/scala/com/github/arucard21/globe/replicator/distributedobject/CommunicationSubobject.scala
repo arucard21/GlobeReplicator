@@ -55,25 +55,25 @@ object CommunicationSubobject {
     })
   }
 
-  def send_request = {
+  /*def send_request = {
     ???
+  }*/
+
+  def send_request(requestUri : URI, method : String, param: Int, onCompleteFunction : (Try[HttpResponse]) => Unit) = {
+    var endpoint = Uri(requestUri.toString).withPath(Path(s"/$method"))
+    var request_method = HttpMethods.GET
+
+    if (method == "setNumber") {
+      endpoint = endpoint.withPath(Path(s"/$method/$param"))
+      request_method = HttpMethods.POST
+    }
+
+    val responseFuture: Future[HttpResponse] = Http().singleRequest(HttpRequest(
+      method = request_method,
+      uri = endpoint
+    ))
+    responseFuture.onComplete(onCompleteFunction)
   }
-
-  //def send_request(requestUri : URI, method : String, param: Int, onCompleteFunction : (Try[HttpResponse]) => Unit) = {
-  //  var endpoint = requestUri + "/" + method
-  //  var request_method = HttpMethods.GET
-
-  //  if (method == "setNumber") {
-  //    endpoint += "/" + param.toString
-  //    request_method = HttpMethods.POST
-  //  }
-
-  //  val responseFuture: Future[HttpResponse] = Http().singleRequest(HttpRequest(
-  //    method = request_method,
-  //    uri = endpoint
-  //  ))
-  //  responseFuture.onComplete(onCompleteFunction)
-  //}
 
   def register(lookupServiceUri : URI, name : String, location : URI, onCompleteFunction : (Try[HttpResponse]) => Unit) = {
     val registration = new Registration(name, location)

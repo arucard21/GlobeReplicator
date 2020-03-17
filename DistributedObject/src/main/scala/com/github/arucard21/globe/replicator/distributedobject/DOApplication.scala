@@ -2,17 +2,24 @@ package com.github.arucard21.globe.replicator.distributedobject
 
 import java.net.URI
 
+import akka.actor.ActorSystem
 import akka.http.scaladsl.model.StatusCodes
 
 import scala.sys.SystemProperties
 import scala.util.{Failure, Success}
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.scala.{DefaultScalaModule, ScalaObjectMapper}
-import scala.concurrent.{Future, Await}
+
+import scala.concurrent.{Await, Future}
 import scala.concurrent.duration.Duration
 import akka.http.scaladsl.model.Uri
+import akka.http.scaladsl.unmarshalling.Unmarshal
+import akka.stream.ActorMaterializer
 
 object DOApplication extends App {
+  implicit val system: ActorSystem = ActorSystem()
+  implicit val materializer: ActorMaterializer = ActorMaterializer()
+
   val distributedObjectName = "test"
 
   val lookupServiceUri = getLookupServiceUri
@@ -50,4 +57,17 @@ object DOApplication extends App {
   val locations : Array[Uri] = Await.result(CommunicationSubobject.findLocationsForDistributedObject(Uri("http://localhost:8080"), "test"), Duration.Inf)
   var locationsString = locations.map(location => location.toString()).toArray
   println(mapper.writeValueAsString(locationsString))
+
+  var result = CommunicationSubobject.send_request(
+    URI.create("http://localhost:8081"),
+    "getNumber",
+    0,
+    {
+      case Success(response) => {
+        val resultNumber = Await.result(Unmarshal(response).to[String], Duration.Inf)
+        val number : Int = resultNumber.toInt
+        println(s"success: ${number}")
+      }
+      case Failure(_) => println(s"*********** failed *************")
+    })
 }

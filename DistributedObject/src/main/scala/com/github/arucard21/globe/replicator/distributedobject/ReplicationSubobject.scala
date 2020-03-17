@@ -33,9 +33,9 @@ object ReplicationSubobject {
 
   def send(method: String, parameter: Int): GlobeMessage = {
     // TODO: Replace with proper call to sub-object
-    if(CommunicationSubobject.send_request) {
+    /*if(CommunicationSubobject.send_request()) {
       Return
-    }
+    }*/
     Fail(s"Failed to send($method, $parameter)")
   }
 
