@@ -47,6 +47,7 @@ object DOApplication extends App {
 
   val mapper = new ObjectMapper() with ScalaObjectMapper
   mapper.registerModule(DefaultScalaModule)
-  mapper.writeValueAsString((Await.result(CommunicationSubobject.findLocationsForDistributedObject(URI.create("http://localhost:8080"), "test"), Duration.Inf)))
-
-  }
+  val locations : Array[Uri] = Await.result(CommunicationSubobject.findLocationsForDistributedObject(Uri("http://localhost:8080"), "test"), Duration.Inf)
+  var locationsString = locations.map(location => location.toString()).toArray
+  println(mapper.writeValueAsString(locationsString))
+}
