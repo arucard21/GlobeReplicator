@@ -12,9 +12,11 @@ fi
 for replicas in 2 3 5 10
 do
   ./deploySystem.sh $replicas
+  sleep 60
   for iteration in {1..20}
   do
-    ./gradlew systemTest
+    ./gradlew systemTest --rerun-tasks
   done
+  sleep 30
   ./gradlew terminateEC2Instances
 done
