@@ -5,4 +5,5 @@ build
 # Ignore IDEA project files
 .idea
 *.iml
-
+# Ignore evaluation output files
+*.csv

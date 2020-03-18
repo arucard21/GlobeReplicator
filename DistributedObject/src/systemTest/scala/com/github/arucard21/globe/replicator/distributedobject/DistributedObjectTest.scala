@@ -15,6 +15,7 @@ import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.scala.{DefaultScalaModule, ScalaObjectMapper}
 import org.scalatest.funsuite.AnyFunSuite
 import org.junit.runner.RunWith
+import org.scalatest.concurrent.ScalaFutures
 import org.scalatest.{BeforeAndAfter, Ignore}
 import org.scalatestplus.junit.JUnitRunner
 
@@ -124,15 +125,17 @@ class DistributedObjectTest extends AnyFunSuite with BeforeAndAfter {
     Files.write(Paths.get(filename), Arrays.asList(s"${objectLocations.size.toString}, $responseTimeInMillis"), StandardCharsets.UTF_8, StandardOpenOption.APPEND)
   }
 
-  test("setNumber on 2 different objects in the same distributed object concurrently should both fail (concurrency evaluation test)") {
-    val newNumber : Int = Random.nextInt(1000)
-    val newNumber2 : Int = Random.nextInt(1000)
-    assertThrows[IllegalStateException]{
-      setNumberForDistributedObject(objectLocations(0), newNumber)
-    }
-    assertThrows[IllegalStateException]{
-      setNumberForDistributedObject(objectLocations(1), newNumber2)
-    }
+  test("setNumber on all local objects in the same distributed object concurrently should fail (concurrency evaluation test)") {
+    val futures = objectLocations.map(objectLocation => {
+      Http().singleRequest(HttpRequest(
+        method = HttpMethods.POST,
+        uri = objectLocation.withPath(Path(s"/setNumber/${Random.nextInt(1000)}"))
+      ))
+    })
+    futures.foreach(future => {
+      val response = Await.result(future, Duration.Inf)
+      assert(response.status != StatusCodes.OK)
+    })
   }
 
   test("setNumber 2 times on the same local object in a distributed object synchronously, one after the other, should correctly replicate changes to all other objects for both requests") {
