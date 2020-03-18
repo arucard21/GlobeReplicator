@@ -126,16 +126,15 @@ class DistributedObjectTest extends AnyFunSuite with BeforeAndAfter {
   }
 
   test("setNumber on all local objects in the same distributed object concurrently should fail (concurrency evaluation test)") {
-    val futures = objectLocations.map(objectLocation => {
-      Http().singleRequest(HttpRequest(
-        method = HttpMethods.POST,
-        uri = objectLocation.withPath(Path(s"/setNumber/${Random.nextInt(1000)}"))
-      ))
-    })
-    futures.foreach(future => {
-      val response = Await.result(future, Duration.Inf)
-      assert(response.status != StatusCodes.OK)
-    })
+    val responses = objectLocations
+      .map(objectLocation => {
+        Http().singleRequest(HttpRequest(
+          method = HttpMethods.POST,
+          uri = objectLocation.withPath(Path(s"/setNumber/${Random.nextInt(1000)}"))
+        ))
+      })
+      .map(responseFuture => Await.result(responseFuture, Duration.Inf))
+    assert(responses.exists(response => response.status != StatusCodes.OK), "The locking process did not work correctly since none of the concurrent requests failed")
   }
 
   test("setNumber 2 times on the same local object in a distributed object synchronously, one after the other, should correctly replicate changes to all other objects for both requests") {
