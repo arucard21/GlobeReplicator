@@ -125,8 +125,9 @@ class DistributedObjectTest extends AnyFunSuite with BeforeAndAfter {
     Files.write(Paths.get(filename), Arrays.asList(s"${objectLocations.size.toString}, $responseTimeInMillis"), StandardCharsets.UTF_8, StandardOpenOption.APPEND)
   }
 
-  test("setNumber on all local objects in the same distributed object concurrently should fail (concurrency evaluation test)") {
-    val responses = objectLocations
+  test("setNumber on 2 local objects in the same distributed object concurrently should fail (concurrency evaluation test)") {
+    val testedLocations = objectLocations.slice(0, 2)
+    val responses = testedLocations
       .map(objectLocation => {
         Http().singleRequest(HttpRequest(
           method = HttpMethods.POST,
