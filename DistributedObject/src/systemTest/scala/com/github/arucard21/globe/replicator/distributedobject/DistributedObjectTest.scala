@@ -47,6 +47,11 @@ class DistributedObjectTest extends AnyFunSuite with BeforeAndAfter {
     assert(objectLocations.size >= 2, "There are less than 2 locations available for this distributed object. The tests require at least 2 locations.")
   }
 
+  after{
+    // reset the number for all objects
+    objectLocations.foreach(location => setNumberForDistributedObject(location, 0))
+  }
+
   private def findLocationsForDistributedObject= {
     val getIdFuture: Future[HttpResponse] = Http().singleRequest(HttpRequest(
       method = HttpMethods.GET,
