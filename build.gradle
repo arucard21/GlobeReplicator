@@ -10,7 +10,7 @@ import jp.classmethod.aws.gradle.ec2.AmazonEC2WaitInstanceStatusTask
 import com.github.jengelman.gradle.plugins.shadow.transformers.AppendingTransformer
 
 def instanceIdsFileName = "instanceIds"
-def lookupServiceUrlFileName = "lookupServiceUrl"
+def lookupServiceUrlFileName = "../lookupServiceUrl"
 def lookupServiceUrlPropertyName = "lookupservice.url"
 def distributedObjectUrlPropertyName = "distributedobject.url"
 def latestInstanceId
