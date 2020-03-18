@@ -1,65 +1,86 @@
 package com.github.arucard21.globe.replicator.distributedobject
 
+import java.net.URI
+
 sealed trait GlobeMessage { def message: String }
 case object Invoke extends GlobeMessage { val message = "Invoke" }
 case object InvokeSend extends GlobeMessage { val message = "Send" }
 case object Return extends GlobeMessage { val message = "Return" }
-case class Fail(message: String) extends GlobeMessage
 
 object ReplicationSubobject {
+  private var locations : Array[URI] = null
+  private var isInvoked = false
   private var lock = false;
-  def start(method: String, parameter: Int = 0): GlobeMessage = {
-    method match {
-      case "setNumber" => setNumber(parameter)
-      case "getNumber" => Invoke // TODO: add checks? not sure when to fail this
-      case _ => Fail("Unknown method called")
-    }
-  }
 
-  def setNumber(parameter: Int): GlobeMessage = {
-    if(lock) {
-      Fail("Local object currently locked.");
+  def start(method: String): GlobeMessage = {
+    if (locations == null || locations.isEmpty) {
+      locations = CommunicationSubobject.lookup_locations(DOApplication.getLookupServiceUri, DOApplication.getDistributedObjectName)
     }
-    // TODO: Replace with correct call to acquire lock
-    if(CommunicationSubobject.acquire_lock) {
-      InvokeSend
+    method match {
+      case "setNumber" => {
+        if (acquireLock()) {
+          InvokeSend
+        }
+        else {
+          throw new IllegalStateException("Failed to acquire lock for the distributed object")
+        }
+      }
+      case "getNumber" => Invoke
+      case _ => throw new IllegalStateException("Unknown method called")
     }
-    Fail("Failed to acquire lock from other objects.")
   }
 
   def invoked(): Unit = {
-    lock = true
+    isInvoked = true
   }
 
-  def send(method: String, parameter: Int): GlobeMessage = {
-    // TODO: Replace with proper call to sub-object
-    if(CommunicationSubobject.send_request) {
-      Return
+  def send(method: String, parameter: Int): Boolean = {
+    val handledLocations = locations.filter(location => CommunicationSubobject.send_request(location, method, parameter))
+    if (handledLocations != null && handledLocations.size == locations.size){
+      true
     }
-    Fail(s"Failed to send($method, $parameter)")
+    else{
+      throw new IllegalStateException(s"The method $method was not processed correctly at ${locations.size - handledLocations.size} location(s)")
+    }
   }
 
   def finish(): GlobeMessage = {
-    lock = false
-    if(CommunicationSubobject.release_lock) {
+    isInvoked = false
+    if(releaseLock) {
       Return
     }
-    Fail("Failed to release_lock in communication subobject")
+    else{
+      throw new IllegalStateException("Could not finish the replication mechanism. Not all locks could be released")
+    }
   }
 
   def acquireLock(): Boolean = {
-    if(!lock) {
-      lock = true;
+    if (lock == true){
+      return false
+    }
+    val lockedLocations = locations.filter(location => CommunicationSubobject.acquire_lock(location))
+    if(lockedLocations != null && lockedLocations.size == locations.size) {
+      lock = true
       true
     }
-    false
+    else {
+      lockedLocations.map(location => !CommunicationSubobject.release_lock(location))
+      if (lockedLocations != null && lockedLocations.size > 0){
+        println(s"The lock could not be acquired on all other objects but the acquired locks at ${lockedLocations.size} location(s) could no longer be released")
+      }
+      false
+    }
   }
 
   def releaseLock():Boolean = {
-    if(lock) {
-      lock = false
+    lock = false
+    val releasedLocations = locations.filter(location => CommunicationSubobject.release_lock(location))
+    if(releasedLocations != null && releasedLocations.size == locations.size) {
       true
     }
-    false
+    else {
+      println(s"The lock could not be released from ${locations.size - releasedLocations.size} location(s)")
+      false
+    }
   }
 }

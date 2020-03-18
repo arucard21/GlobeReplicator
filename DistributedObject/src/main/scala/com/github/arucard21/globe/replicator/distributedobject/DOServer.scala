@@ -38,7 +38,7 @@ object DOServer extends HttpApp {
               Directives.complete{
                 val requestData = mapper.readValue[RequestFromOtherObject](requestContent)
                 ControlSubobject.handle_request(requestData.method, requestData.parameter)
-                HttpEntity(ContentTypes.`text/plain(UTF-8)`, "Request handles successfully")
+                HttpEntity(ContentTypes.`text/plain(UTF-8)`, "Request handled successfully")
               }
             }
           }

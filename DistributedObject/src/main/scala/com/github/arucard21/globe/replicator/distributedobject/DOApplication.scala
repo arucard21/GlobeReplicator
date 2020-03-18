@@ -8,10 +8,9 @@ import scala.sys.SystemProperties
 import scala.util.{Failure, Success}
 
 object DOApplication extends App {
-  val distributedObjectName = "test"
-
-  val lookupServiceUri = getLookupServiceUri
-  val distributedObjectUri = getDistributedObjectUri
+  def getDistributedObjectName : String = {
+    "test"
+  }
 
   def getLookupServiceUri = {
     val propertyKeyLookupServiceUrl : String = "lookupservice.url"
@@ -28,15 +27,15 @@ object DOApplication extends App {
   }
 
   CommunicationSubobject.register(
-    lookupServiceUri,
-    distributedObjectName,
-    distributedObjectUri,
+    getLookupServiceUri,
+    getDistributedObjectName,
+    getDistributedObjectUri,
     {
       case Success(response) =>
         if (response.status == StatusCodes.OK)
-          DOServer.startServer("0.0.0.0", distributedObjectUri.getPort)
+          DOServer.startServer("0.0.0.0", getDistributedObjectUri.getPort)
         else
-          println(s"""The registration of the distributed object with name "$distributedObjectName" and location "$distributedObjectUri" failed on the lookup service at: $lookupServiceUri""")
-      case Failure(_) => println(s"""The request for the registration of the distributed object with name "$distributedObjectName" and location "$distributedObjectUri" failed on the lookup service at: $lookupServiceUri""")
+          println(s"""The registration of the distributed object with name "${getDistributedObjectName}" and location "${getDistributedObjectUri}" failed on the lookup service at: ${getLookupServiceUri}""")
+      case Failure(_) => println(s"""The request for the registration of the distributed object with name "${getDistributedObjectName}" and location "${getDistributedObjectUri}" failed on the lookup service at: ${getLookupServiceUri}""")
     })
   }
