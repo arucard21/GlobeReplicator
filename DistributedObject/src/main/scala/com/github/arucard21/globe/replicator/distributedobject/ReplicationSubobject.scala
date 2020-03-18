@@ -10,7 +10,7 @@ case object Return extends GlobeMessage { val message = "Return" }
 object ReplicationSubobject {
   private var locations : Array[URI] = null
   private var isInvoked = false
-  private var lock = false;
+  private var locked = false;
 
   def start(method: String): GlobeMessage = {
     if (locations == null || locations.isEmpty) {
@@ -18,7 +18,7 @@ object ReplicationSubobject {
     }
     method match {
       case "setNumber" => {
-        if (acquireLock()) {
+        if (acquireLockForDistributedObject) {
           InvokeSend
         }
         else {
@@ -46,21 +46,20 @@ object ReplicationSubobject {
 
   def finish(): GlobeMessage = {
     isInvoked = false
-    if(releaseLock) {
+    if(!locked || releaseLockForDistributedObject) {
       Return
     }
     else{
-      throw new IllegalStateException("Could not finish the replication mechanism. Not all locks could be released")
+      throw new IllegalStateException("Not all locks could be released when finishing replication")
     }
   }
 
-  def acquireLock(): Boolean = {
-    if (lock == true){
+  def acquireLockForDistributedObject(): Boolean = {
+    if(locked) {
       return false
     }
     val lockedLocations = locations.filter(location => CommunicationSubobject.acquire_lock(location))
     if(lockedLocations != null && lockedLocations.size == locations.size) {
-      lock = true
       true
     }
     else {
@@ -72,8 +71,7 @@ object ReplicationSubobject {
     }
   }
 
-  def releaseLock():Boolean = {
-    lock = false
+  def releaseLockForDistributedObject():Boolean = {
     val releasedLocations = locations.filter(location => CommunicationSubobject.release_lock(location))
     if(releasedLocations != null && releasedLocations.size == locations.size) {
       true
@@ -81,6 +79,26 @@ object ReplicationSubobject {
     else {
       println(s"The lock could not be released from ${locations.size - releasedLocations.size} location(s)")
       false
+    }
+  }
+
+  def acquireLock(): Boolean = {
+    if (locked){
+      false
+    }
+    else {
+      locked = true
+      true
+    }
+  }
+
+  def releaseLock(): Boolean = {
+    if (!locked){
+      false
+    }
+    else {
+      locked = false
+      true
     }
   }
 }
