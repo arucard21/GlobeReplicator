@@ -116,7 +116,7 @@ class DistributedObjectTest extends AnyFunSuite with BeforeAndAfter {
       })
     }
     val responseTimeInMillis = endTime - beginTime
-    val filename = "responseTimes.csv"
+    val filename = "responseTimesScalability.csv"
     val file = Paths.get(filename)
     if(Files.notExists(file)){
       // write header row
@@ -127,6 +127,7 @@ class DistributedObjectTest extends AnyFunSuite with BeforeAndAfter {
 
   test("setNumber on 2 local objects in the same distributed object concurrently should fail (concurrency evaluation test)") {
     val testedLocations = objectLocations.slice(0, 2)
+    val beginTime = System.currentTimeMillis()
     val responses = testedLocations
       .map(objectLocation => {
         Http().singleRequest(HttpRequest(
@@ -135,7 +136,17 @@ class DistributedObjectTest extends AnyFunSuite with BeforeAndAfter {
         ))
       })
       .map(responseFuture => Await.result(responseFuture, Duration.Inf))
+    val endTime = System.currentTimeMillis()
     assert(responses.filter(response => response.status == StatusCodes.OK).size <= 1, "The locking process did not work correctly since more than one of the concurrent requests succeeded")
+
+    val responseTimeInMillis = endTime - beginTime
+    val filename = "responseTimesConcurrency.csv"
+    val file = Paths.get(filename)
+    if(Files.notExists(file)){
+      // write header row
+      Files.write(Paths.get(filename), Arrays.asList("objectCount, responseTime(ms)"), StandardCharsets.UTF_8)
+    }
+    Files.write(Paths.get(filename), Arrays.asList(s"${objectLocations.size.toString}, $responseTimeInMillis"), StandardCharsets.UTF_8, StandardOpenOption.APPEND)
   }
 
   test("setNumber 2 times on the same local object in a distributed object synchronously, one after the other, should correctly replicate changes to all other objects for both requests") {
