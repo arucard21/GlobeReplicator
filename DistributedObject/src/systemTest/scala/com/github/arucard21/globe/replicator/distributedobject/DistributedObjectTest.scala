@@ -134,7 +134,7 @@ class DistributedObjectTest extends AnyFunSuite with BeforeAndAfter {
         ))
       })
       .map(responseFuture => Await.result(responseFuture, Duration.Inf))
-    assert(responses.exists(response => response.status != StatusCodes.OK), "The locking process did not work correctly since none of the concurrent requests failed")
+    assert(responses.filter(response => response.status == StatusCodes.OK).size == 1, "The locking process did not work correctly since more than one of the concurrent requests succeeded")
   }
 
   test("setNumber 2 times on the same local object in a distributed object synchronously, one after the other, should correctly replicate changes to all other objects for both requests") {
