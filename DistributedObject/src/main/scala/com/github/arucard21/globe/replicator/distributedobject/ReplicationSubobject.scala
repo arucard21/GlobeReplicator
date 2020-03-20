@@ -1,6 +1,8 @@
 package com.github.arucard21.globe.replicator.distributedobject
 
 import java.net.URI
+import scala.util.Random
+import java.util.concurrent.atomic.AtomicBoolean
 
 sealed trait GlobeMessage { def message: String }
 case object Invoke extends GlobeMessage { val message = "Invoke" }
@@ -10,7 +12,7 @@ case object Return extends GlobeMessage { val message = "Return" }
 object ReplicationSubobject {
   private var locations : Array[URI] = null
   private var isInvoked = false
-  private var locked = false;
+  private var locked = false
 
   def start(method: String): GlobeMessage = {
     if (locations == null || locations.isEmpty) {
@@ -58,11 +60,17 @@ object ReplicationSubobject {
     if(locked) {
       return false
     }
-    val lockedLocations = locations.filter(location => CommunicationSubobject.acquire_lock(location))
-    if(lockedLocations != null && lockedLocations.size == locations.size) {
+    // First lock self
+    locked = true
+    val ownLocation = DOApplication.getDistributedObjectUri
+    val filteredLocations = locations.filter(location =>  location != ownLocation)
+    val lockedLocations = filteredLocations.filter(location => CommunicationSubobject.acquire_lock(location))
+    if(lockedLocations != null && lockedLocations.size + 1 == locations.size) {
       true
     }
     else {
+      // Own lock release
+      locked = false
       lockedLocations.map(location => !CommunicationSubobject.release_lock(location))
       if (lockedLocations != null && lockedLocations.size > 0){
         println(s"The lock could not be acquired on all other objects but the acquired locks at ${lockedLocations.size} location(s) could no longer be released")
