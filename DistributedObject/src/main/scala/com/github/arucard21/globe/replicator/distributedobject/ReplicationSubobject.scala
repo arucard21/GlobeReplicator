@@ -1,8 +1,6 @@
 package com.github.arucard21.globe.replicator.distributedobject
 
 import java.net.URI
-import scala.util.Random
-import java.util.concurrent.atomic.AtomicBoolean
 
 sealed trait GlobeMessage { def message: String }
 case object Invoke extends GlobeMessage { val message = "Invoke" }
