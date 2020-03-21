@@ -7,9 +7,12 @@ fi
 
 echo "Deploying Lookup Service "
 ./gradlew deployLookupService
+# Wait for Lookup Service to have completely started so the Distributed Object can register itself at startup.
+sleep 60
 for i in $(seq 1 $1)
 do
 	echo "Deploying Distributed Object $i"
-	sleep 1
+	# Wait between deployments so we don't hammer AWS (and get failed deployments)
+	sleep 10
 	./gradlew deployDistributedObject
 done
