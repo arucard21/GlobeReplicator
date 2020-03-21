@@ -10,7 +10,7 @@ import jp.classmethod.aws.gradle.ec2.AmazonEC2WaitInstanceStatusTask
 import com.github.jengelman.gradle.plugins.shadow.transformers.AppendingTransformer
 
 def instanceIdsFileName = "instanceIds"
-def lookupServiceUrlFileName = "../lookupServiceUrl"
+def lookupServiceUrlFileName = "lookupServiceUrl"
 def lookupServiceUrlPropertyName = "lookupservice.url"
 def distributedObjectUrlPropertyName = "distributedobject.url"
 def latestInstanceId
@@ -36,8 +36,8 @@ subprojects {
         if (project.hasProperty(lookupServiceUrlPropertyName)){
             systemProperty lookupServiceUrlPropertyName, project.getProperty(lookupServiceUrlPropertyName)
         }
-        else if (file(lookupServiceUrlFileName).exists()){
-            systemProperty lookupServiceUrlPropertyName, file(lookupServiceUrlFileName).getText()
+        else if (rootProject.file(lookupServiceUrlFileName).exists()){
+            systemProperty lookupServiceUrlPropertyName, rootProject.file(lookupServiceUrlFileName).getText()
         }
         else {
             systemProperty lookupServiceUrlPropertyName, "http://localhost:8080"
@@ -67,8 +67,8 @@ subprojects {
         if (project.hasProperty(lookupServiceUrlPropertyName)){
             systemProperty lookupServiceUrlPropertyName, project.getProperty(lookupServiceUrlPropertyName)
         }
-        else if (file(lookupServiceUrlFileName).exists()){
-            systemProperty lookupServiceUrlPropertyName, file(lookupServiceUrlFileName).getText()
+        else if (rootProject.file(lookupServiceUrlFileName).exists()){
+            systemProperty lookupServiceUrlPropertyName, rootProject.file(lookupServiceUrlFileName).getText()
         }
         else {
             systemProperty lookupServiceUrlPropertyName, "http://localhost:8080"
@@ -133,7 +133,7 @@ task terminateEC2Instances(type: AmazonEC2TerminateInstanceTask) {
             instances.eachLine { line -> instanceIds += line }
             instances.delete()
         }
-        file(lookupServiceUrlFileName).delete()
+        rootProject.file(lookupServiceUrlFileName).delete()
     }
 }
 
@@ -157,7 +157,7 @@ task deployLookupService(){
                     "ubuntu@${awsInstanceURL}",
                     "nohup java -jar ~/LookupService-all.jar > ~/LookupService.log 2>&1 &"
         }
-        file(lookupServiceUrlFileName).setText("http://${awsInstanceURL}:8080")
+        rootProject.file(lookupServiceUrlFileName).setText("http://${awsInstanceURL}:8080")
     }
 }
 
@@ -165,7 +165,7 @@ task deployDistributedObject(){
     dependsOn subprojects.build
     dependsOn deployEC2Instance
     doLast{
-        def lookupServiceUrl = file(lookupServiceUrlFileName).getText()
+        def lookupServiceUrl = rootProject.file(lookupServiceUrlFileName).getText()
         // wait for java to be installed
         sleep(60 * 1000)
         exec {
