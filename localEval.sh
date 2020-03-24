@@ -8,14 +8,15 @@ if [ -f ./DistributedObject/responseTimesConcurrency.csv ]
 then
   mv -v ./DistributedObject/responseTimesConcurrency.csv ./DistributedObject/responseTimesConcurrency_prev.csv
 fi
-workingDir=$PWD
-gnome-terminal --working-directory="$workingDir" --command "./gradlew :LookupService:run" & 
+nohup ./gradlew :LookupService:run &> LookupService.log &
+pids=$!
 sleep 5
 # deploy the system with different amounts of Distributed Object replicas
 port=8081
 for i in {1..10}
   do
-  gnome-terminal --working-directory="$workingDir" --command "./gradlew :DistributedObject:run -Pdistributedobject.url=http://localhost:$port" &
+  nohup ./gradlew :DistributedObject:run -Pdistributedobject.url=http://localhost:$port &> DistributedObject.$port.log &
+  pids="$pids $!"
   ((port++))
   sleep 1
 done
@@ -24,5 +25,4 @@ for iteration in {1..20}
 do
 ./gradlew systemTest --rerun-tasks
 done
-
-
+kill $pids
