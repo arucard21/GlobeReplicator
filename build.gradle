@@ -98,7 +98,7 @@ task waitInstanceStatusStable (type: AmazonEC2WaitInstanceStatusTask) {
     doFirst{
         instanceId = latestInstanceId
         // Wait to ensure that the instance can be described after deployment (this may sometimes take some time)
-        sleep(30 * 1000)
+        sleep(10 * 1000)
     }
     doLast{
         println "Access instance with: ssh ubuntu@" + awsInstance.getPublicDnsName()
