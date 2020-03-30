@@ -24,7 +24,7 @@ do
     ./gradlew systemTest --rerun-tasks
     echo "$(date -Iminutes): Finished running test iteration $iteration on system with $replicas replicas"
     # Give the system time to fully finish the system test and become ready for the next iteration of testing
-    sleep 30
+    sleep 5
   done
   # Shut down the system and remove the EC2 instances
   echo "$(date -Iminutes): Terminating EC2 instances"
