@@ -1,0 +1,3903 @@
+2020-03-28T08:49+01:00: Start evaluation
+2020-03-28T08:49+01:00: Deploy system with 2 replicas
+Deploying Lookup Service 
+Starting a Gradle Daemon (subsequent builds will be faster)
+> Task :deployEC2Instance
+> Task :waitInstanceStatusStable
+Access instance with: ssh ubuntu@ec2-3-83-44-175.compute-1.amazonaws.com
+
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala UP-TO-DATE
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes UP-TO-DATE
+> Task :DistributedObject:jar UP-TO-DATE
+> Task :DistributedObject:startScripts UP-TO-DATE
+> Task :DistributedObject:distTar UP-TO-DATE
+> Task :DistributedObject:distZip UP-TO-DATE
+> Task :DistributedObject:shadowJar UP-TO-DATE
+> Task :DistributedObject:startShadowScripts UP-TO-DATE
+> Task :DistributedObject:shadowDistTar UP-TO-DATE
+> Task :DistributedObject:shadowDistZip UP-TO-DATE
+> Task :DistributedObject:assemble UP-TO-DATE
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:test NO-SOURCE
+> Task :DistributedObject:check UP-TO-DATE
+> Task :DistributedObject:build UP-TO-DATE
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala UP-TO-DATE
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes UP-TO-DATE
+> Task :LookupService:jar UP-TO-DATE
+> Task :LookupService:startScripts UP-TO-DATE
+> Task :LookupService:distTar UP-TO-DATE
+> Task :LookupService:distZip UP-TO-DATE
+> Task :LookupService:shadowJar UP-TO-DATE
+> Task :LookupService:startShadowScripts UP-TO-DATE
+> Task :LookupService:shadowDistTar UP-TO-DATE
+> Task :LookupService:shadowDistZip UP-TO-DATE
+> Task :LookupService:assemble UP-TO-DATE
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala UP-TO-DATE
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses UP-TO-DATE
+> Task :LookupService:test UP-TO-DATE
+> Task :LookupService:check UP-TO-DATE
+> Task :LookupService:build UP-TO-DATE
+> Task :deployLookupService
+Copying LookupService to the EC2 instance
+Warning: Permanently added 'ec2-3-83-44-175.compute-1.amazonaws.com,3.83.44.175' (ECDSA) to the list of known hosts.
+Starting Lookup Service on the EC2 instance
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+Use '--warning-mode all' to show the individual deprecation warnings.
+See https://docs.gradle.org/6.2.2/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD SUCCESSFUL in 2m 4s
+23 actionable tasks: 3 executed, 20 up-to-date
+Deploying Distributed Object 1
+> Task :deployEC2Instance
+> Task :waitInstanceStatusStable
+Access instance with: ssh ubuntu@ec2-3-83-15-34.compute-1.amazonaws.com
+
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala UP-TO-DATE
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes UP-TO-DATE
+> Task :DistributedObject:jar UP-TO-DATE
+> Task :DistributedObject:startScripts UP-TO-DATE
+> Task :DistributedObject:distTar UP-TO-DATE
+> Task :DistributedObject:distZip UP-TO-DATE
+> Task :DistributedObject:shadowJar UP-TO-DATE
+> Task :DistributedObject:startShadowScripts UP-TO-DATE
+> Task :DistributedObject:shadowDistTar UP-TO-DATE
+> Task :DistributedObject:shadowDistZip UP-TO-DATE
+> Task :DistributedObject:assemble UP-TO-DATE
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:test NO-SOURCE
+> Task :DistributedObject:check UP-TO-DATE
+> Task :DistributedObject:build UP-TO-DATE
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala UP-TO-DATE
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes UP-TO-DATE
+> Task :LookupService:jar UP-TO-DATE
+> Task :LookupService:startScripts UP-TO-DATE
+> Task :LookupService:distTar UP-TO-DATE
+> Task :LookupService:distZip UP-TO-DATE
+> Task :LookupService:shadowJar UP-TO-DATE
+> Task :LookupService:startShadowScripts UP-TO-DATE
+> Task :LookupService:shadowDistTar UP-TO-DATE
+> Task :LookupService:shadowDistZip UP-TO-DATE
+> Task :LookupService:assemble UP-TO-DATE
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala UP-TO-DATE
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses UP-TO-DATE
+> Task :LookupService:test UP-TO-DATE
+> Task :LookupService:check UP-TO-DATE
+> Task :LookupService:build UP-TO-DATE
+> Task :deployDistributedObject
+Copying Distributed Object to the EC2 instance
+Warning: Permanently added 'ec2-3-83-15-34.compute-1.amazonaws.com,3.83.15.34' (ECDSA) to the list of known hosts.
+Starting Distributed Object on the EC2 instance
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+Use '--warning-mode all' to show the individual deprecation warnings.
+See https://docs.gradle.org/6.2.2/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD SUCCESSFUL in 1m 45s
+23 actionable tasks: 3 executed, 20 up-to-date
+Deploying Distributed Object 2
+> Task :deployEC2Instance
+> Task :waitInstanceStatusStable
+Access instance with: ssh ubuntu@ec2-52-87-241-120.compute-1.amazonaws.com
+
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala UP-TO-DATE
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes UP-TO-DATE
+> Task :DistributedObject:jar UP-TO-DATE
+> Task :DistributedObject:startScripts UP-TO-DATE
+> Task :DistributedObject:distTar UP-TO-DATE
+> Task :DistributedObject:distZip UP-TO-DATE
+> Task :DistributedObject:shadowJar UP-TO-DATE
+> Task :DistributedObject:startShadowScripts UP-TO-DATE
+> Task :DistributedObject:shadowDistTar UP-TO-DATE
+> Task :DistributedObject:shadowDistZip UP-TO-DATE
+> Task :DistributedObject:assemble UP-TO-DATE
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:test NO-SOURCE
+> Task :DistributedObject:check UP-TO-DATE
+> Task :DistributedObject:build UP-TO-DATE
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala UP-TO-DATE
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes UP-TO-DATE
+> Task :LookupService:jar UP-TO-DATE
+> Task :LookupService:startScripts UP-TO-DATE
+> Task :LookupService:distTar UP-TO-DATE
+> Task :LookupService:distZip UP-TO-DATE
+> Task :LookupService:shadowJar UP-TO-DATE
+> Task :LookupService:startShadowScripts UP-TO-DATE
+> Task :LookupService:shadowDistTar UP-TO-DATE
+> Task :LookupService:shadowDistZip UP-TO-DATE
+> Task :LookupService:assemble UP-TO-DATE
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala UP-TO-DATE
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses UP-TO-DATE
+> Task :LookupService:test UP-TO-DATE
+> Task :LookupService:check UP-TO-DATE
+> Task :LookupService:build UP-TO-DATE
+> Task :deployDistributedObject
+Copying Distributed Object to the EC2 instance
+Warning: Permanently added 'ec2-52-87-241-120.compute-1.amazonaws.com,52.87.241.120' (ECDSA) to the list of known hosts.
+Starting Distributed Object on the EC2 instance
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+Use '--warning-mode all' to show the individual deprecation warnings.
+See https://docs.gradle.org/6.2.2/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD SUCCESSFUL in 1m 49s
+23 actionable tasks: 3 executed, 20 up-to-date
+2020-03-28T08:56+01:00: Finished deploying system with 2 replicas
+2020-03-28T08:57+01:00: Running test iteration 1 on system with 2 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 17s
+5 actionable tasks: 5 executed
+2020-03-28T08:58+01:00: Finished running test iteration 1 on system with 2 replicas
+2020-03-28T08:58+01:00: Running test iteration 2 on system with 2 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 16s
+5 actionable tasks: 5 executed
+2020-03-28T08:58+01:00: Finished running test iteration 2 on system with 2 replicas
+2020-03-28T08:59+01:00: Running test iteration 3 on system with 2 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 16s
+5 actionable tasks: 5 executed
+2020-03-28T08:59+01:00: Finished running test iteration 3 on system with 2 replicas
+2020-03-28T09:00+01:00: Running test iteration 4 on system with 2 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 16s
+5 actionable tasks: 5 executed
+2020-03-28T09:00+01:00: Finished running test iteration 4 on system with 2 replicas
+2020-03-28T09:00+01:00: Running test iteration 5 on system with 2 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 16s
+5 actionable tasks: 5 executed
+2020-03-28T09:01+01:00: Finished running test iteration 5 on system with 2 replicas
+2020-03-28T09:01+01:00: Running test iteration 6 on system with 2 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 16s
+5 actionable tasks: 5 executed
+2020-03-28T09:01+01:00: Finished running test iteration 6 on system with 2 replicas
+2020-03-28T09:02+01:00: Running test iteration 7 on system with 2 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 16s
+5 actionable tasks: 5 executed
+2020-03-28T09:02+01:00: Finished running test iteration 7 on system with 2 replicas
+2020-03-28T09:03+01:00: Running test iteration 8 on system with 2 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 16s
+5 actionable tasks: 5 executed
+2020-03-28T09:03+01:00: Finished running test iteration 8 on system with 2 replicas
+2020-03-28T09:04+01:00: Running test iteration 9 on system with 2 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 16s
+5 actionable tasks: 5 executed
+2020-03-28T09:04+01:00: Finished running test iteration 9 on system with 2 replicas
+2020-03-28T09:04+01:00: Running test iteration 10 on system with 2 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 16s
+5 actionable tasks: 5 executed
+2020-03-28T09:05+01:00: Finished running test iteration 10 on system with 2 replicas
+2020-03-28T09:05+01:00: Running test iteration 11 on system with 2 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 16s
+5 actionable tasks: 5 executed
+2020-03-28T09:05+01:00: Finished running test iteration 11 on system with 2 replicas
+2020-03-28T09:06+01:00: Running test iteration 12 on system with 2 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 16s
+5 actionable tasks: 5 executed
+2020-03-28T09:06+01:00: Finished running test iteration 12 on system with 2 replicas
+2020-03-28T09:07+01:00: Running test iteration 13 on system with 2 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 16s
+5 actionable tasks: 5 executed
+2020-03-28T09:07+01:00: Finished running test iteration 13 on system with 2 replicas
+2020-03-28T09:07+01:00: Running test iteration 14 on system with 2 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 16s
+5 actionable tasks: 5 executed
+2020-03-28T09:08+01:00: Finished running test iteration 14 on system with 2 replicas
+2020-03-28T09:08+01:00: Running test iteration 15 on system with 2 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 16s
+5 actionable tasks: 5 executed
+2020-03-28T09:08+01:00: Finished running test iteration 15 on system with 2 replicas
+2020-03-28T09:09+01:00: Running test iteration 16 on system with 2 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 16s
+5 actionable tasks: 5 executed
+2020-03-28T09:09+01:00: Finished running test iteration 16 on system with 2 replicas
+2020-03-28T09:10+01:00: Running test iteration 17 on system with 2 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 16s
+5 actionable tasks: 5 executed
+2020-03-28T09:10+01:00: Finished running test iteration 17 on system with 2 replicas
+2020-03-28T09:11+01:00: Running test iteration 18 on system with 2 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 15s
+5 actionable tasks: 5 executed
+2020-03-28T09:11+01:00: Finished running test iteration 18 on system with 2 replicas
+2020-03-28T09:11+01:00: Running test iteration 19 on system with 2 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 15s
+5 actionable tasks: 5 executed
+2020-03-28T09:12+01:00: Finished running test iteration 19 on system with 2 replicas
+2020-03-28T09:12+01:00: Running test iteration 20 on system with 2 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 15s
+5 actionable tasks: 5 executed
+2020-03-28T09:12+01:00: Finished running test iteration 20 on system with 2 replicas
+2020-03-28T09:13+01:00: Terminating EC2 instances
+> Task :terminateEC2Instances
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+Use '--warning-mode all' to show the individual deprecation warnings.
+See https://docs.gradle.org/6.2.2/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD SUCCESSFUL in 1s
+1 actionable task: 1 executed
+2020-03-28T09:13+01:00: Deploy system with 3 replicas
+Deploying Lookup Service 
+> Task :deployEC2Instance
+> Task :waitInstanceStatusStable
+Access instance with: ssh ubuntu@ec2-3-86-212-245.compute-1.amazonaws.com
+
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala UP-TO-DATE
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes UP-TO-DATE
+> Task :DistributedObject:jar UP-TO-DATE
+> Task :DistributedObject:startScripts UP-TO-DATE
+> Task :DistributedObject:distTar UP-TO-DATE
+> Task :DistributedObject:distZip UP-TO-DATE
+> Task :DistributedObject:shadowJar UP-TO-DATE
+> Task :DistributedObject:startShadowScripts UP-TO-DATE
+> Task :DistributedObject:shadowDistTar UP-TO-DATE
+> Task :DistributedObject:shadowDistZip UP-TO-DATE
+> Task :DistributedObject:assemble UP-TO-DATE
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:test NO-SOURCE
+> Task :DistributedObject:check UP-TO-DATE
+> Task :DistributedObject:build UP-TO-DATE
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala UP-TO-DATE
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes UP-TO-DATE
+> Task :LookupService:jar UP-TO-DATE
+> Task :LookupService:startScripts UP-TO-DATE
+> Task :LookupService:distTar UP-TO-DATE
+> Task :LookupService:distZip UP-TO-DATE
+> Task :LookupService:shadowJar UP-TO-DATE
+> Task :LookupService:startShadowScripts UP-TO-DATE
+> Task :LookupService:shadowDistTar UP-TO-DATE
+> Task :LookupService:shadowDistZip UP-TO-DATE
+> Task :LookupService:assemble UP-TO-DATE
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala UP-TO-DATE
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses UP-TO-DATE
+> Task :LookupService:test UP-TO-DATE
+> Task :LookupService:check UP-TO-DATE
+> Task :LookupService:build UP-TO-DATE
+> Task :deployLookupService
+Copying LookupService to the EC2 instance
+Warning: Permanently added 'ec2-3-86-212-245.compute-1.amazonaws.com,3.86.212.245' (ECDSA) to the list of known hosts.
+Starting Lookup Service on the EC2 instance
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+Use '--warning-mode all' to show the individual deprecation warnings.
+See https://docs.gradle.org/6.2.2/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD SUCCESSFUL in 1m 44s
+23 actionable tasks: 3 executed, 20 up-to-date
+Deploying Distributed Object 1
+> Task :deployEC2Instance
+> Task :waitInstanceStatusStable
+Access instance with: ssh ubuntu@ec2-3-92-191-205.compute-1.amazonaws.com
+
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala UP-TO-DATE
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes UP-TO-DATE
+> Task :DistributedObject:jar UP-TO-DATE
+> Task :DistributedObject:startScripts UP-TO-DATE
+> Task :DistributedObject:distTar UP-TO-DATE
+> Task :DistributedObject:distZip UP-TO-DATE
+> Task :DistributedObject:shadowJar UP-TO-DATE
+> Task :DistributedObject:startShadowScripts UP-TO-DATE
+> Task :DistributedObject:shadowDistTar UP-TO-DATE
+> Task :DistributedObject:shadowDistZip UP-TO-DATE
+> Task :DistributedObject:assemble UP-TO-DATE
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:test NO-SOURCE
+> Task :DistributedObject:check UP-TO-DATE
+> Task :DistributedObject:build UP-TO-DATE
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala UP-TO-DATE
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes UP-TO-DATE
+> Task :LookupService:jar UP-TO-DATE
+> Task :LookupService:startScripts UP-TO-DATE
+> Task :LookupService:distTar UP-TO-DATE
+> Task :LookupService:distZip UP-TO-DATE
+> Task :LookupService:shadowJar UP-TO-DATE
+> Task :LookupService:startShadowScripts UP-TO-DATE
+> Task :LookupService:shadowDistTar UP-TO-DATE
+> Task :LookupService:shadowDistZip UP-TO-DATE
+> Task :LookupService:assemble UP-TO-DATE
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala UP-TO-DATE
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses UP-TO-DATE
+> Task :LookupService:test UP-TO-DATE
+> Task :LookupService:check UP-TO-DATE
+> Task :LookupService:build UP-TO-DATE
+> Task :deployDistributedObject
+Copying Distributed Object to the EC2 instance
+Warning: Permanently added 'ec2-3-92-191-205.compute-1.amazonaws.com,3.92.191.205' (ECDSA) to the list of known hosts.
+Starting Distributed Object on the EC2 instance
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+Use '--warning-mode all' to show the individual deprecation warnings.
+See https://docs.gradle.org/6.2.2/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD SUCCESSFUL in 1m 43s
+23 actionable tasks: 3 executed, 20 up-to-date
+Deploying Distributed Object 2
+> Task :deployEC2Instance
+> Task :waitInstanceStatusStable
+Access instance with: ssh ubuntu@ec2-52-91-172-108.compute-1.amazonaws.com
+
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala UP-TO-DATE
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes UP-TO-DATE
+> Task :DistributedObject:jar UP-TO-DATE
+> Task :DistributedObject:startScripts UP-TO-DATE
+> Task :DistributedObject:distTar UP-TO-DATE
+> Task :DistributedObject:distZip UP-TO-DATE
+> Task :DistributedObject:shadowJar UP-TO-DATE
+> Task :DistributedObject:startShadowScripts UP-TO-DATE
+> Task :DistributedObject:shadowDistTar UP-TO-DATE
+> Task :DistributedObject:shadowDistZip UP-TO-DATE
+> Task :DistributedObject:assemble UP-TO-DATE
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:test NO-SOURCE
+> Task :DistributedObject:check UP-TO-DATE
+> Task :DistributedObject:build UP-TO-DATE
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala UP-TO-DATE
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes UP-TO-DATE
+> Task :LookupService:jar UP-TO-DATE
+> Task :LookupService:startScripts UP-TO-DATE
+> Task :LookupService:distTar UP-TO-DATE
+> Task :LookupService:distZip UP-TO-DATE
+> Task :LookupService:shadowJar UP-TO-DATE
+> Task :LookupService:startShadowScripts UP-TO-DATE
+> Task :LookupService:shadowDistTar UP-TO-DATE
+> Task :LookupService:shadowDistZip UP-TO-DATE
+> Task :LookupService:assemble UP-TO-DATE
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala UP-TO-DATE
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses UP-TO-DATE
+> Task :LookupService:test UP-TO-DATE
+> Task :LookupService:check UP-TO-DATE
+> Task :LookupService:build UP-TO-DATE
+> Task :deployDistributedObject
+Copying Distributed Object to the EC2 instance
+Warning: Permanently added 'ec2-52-91-172-108.compute-1.amazonaws.com,52.91.172.108' (ECDSA) to the list of known hosts.
+Starting Distributed Object on the EC2 instance
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+Use '--warning-mode all' to show the individual deprecation warnings.
+See https://docs.gradle.org/6.2.2/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD SUCCESSFUL in 1m 49s
+23 actionable tasks: 3 executed, 20 up-to-date
+Deploying Distributed Object 3
+> Task :deployEC2Instance
+> Task :waitInstanceStatusStable
+Access instance with: ssh ubuntu@ec2-52-201-215-173.compute-1.amazonaws.com
+
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala UP-TO-DATE
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes UP-TO-DATE
+> Task :DistributedObject:jar UP-TO-DATE
+> Task :DistributedObject:startScripts UP-TO-DATE
+> Task :DistributedObject:distTar UP-TO-DATE
+> Task :DistributedObject:distZip UP-TO-DATE
+> Task :DistributedObject:shadowJar UP-TO-DATE
+> Task :DistributedObject:startShadowScripts UP-TO-DATE
+> Task :DistributedObject:shadowDistTar UP-TO-DATE
+> Task :DistributedObject:shadowDistZip UP-TO-DATE
+> Task :DistributedObject:assemble UP-TO-DATE
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:test NO-SOURCE
+> Task :DistributedObject:check UP-TO-DATE
+> Task :DistributedObject:build UP-TO-DATE
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala UP-TO-DATE
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes UP-TO-DATE
+> Task :LookupService:jar UP-TO-DATE
+> Task :LookupService:startScripts UP-TO-DATE
+> Task :LookupService:distTar UP-TO-DATE
+> Task :LookupService:distZip UP-TO-DATE
+> Task :LookupService:shadowJar UP-TO-DATE
+> Task :LookupService:startShadowScripts UP-TO-DATE
+> Task :LookupService:shadowDistTar UP-TO-DATE
+> Task :LookupService:shadowDistZip UP-TO-DATE
+> Task :LookupService:assemble UP-TO-DATE
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala UP-TO-DATE
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses UP-TO-DATE
+> Task :LookupService:test UP-TO-DATE
+> Task :LookupService:check UP-TO-DATE
+> Task :LookupService:build UP-TO-DATE
+> Task :deployDistributedObject
+Copying Distributed Object to the EC2 instance
+Warning: Permanently added 'ec2-52-201-215-173.compute-1.amazonaws.com,52.201.215.173' (ECDSA) to the list of known hosts.
+Starting Distributed Object on the EC2 instance
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+Use '--warning-mode all' to show the individual deprecation warnings.
+See https://docs.gradle.org/6.2.2/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD SUCCESSFUL in 1m 46s
+23 actionable tasks: 3 executed, 20 up-to-date
+2020-03-28T09:22+01:00: Finished deploying system with 3 replicas
+2020-03-28T09:23+01:00: Running test iteration 1 on system with 3 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 17s
+5 actionable tasks: 5 executed
+2020-03-28T09:23+01:00: Finished running test iteration 1 on system with 3 replicas
+2020-03-28T09:23+01:00: Running test iteration 2 on system with 3 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 16s
+5 actionable tasks: 5 executed
+2020-03-28T09:24+01:00: Finished running test iteration 2 on system with 3 replicas
+2020-03-28T09:24+01:00: Running test iteration 3 on system with 3 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 16s
+5 actionable tasks: 5 executed
+2020-03-28T09:24+01:00: Finished running test iteration 3 on system with 3 replicas
+2020-03-28T09:25+01:00: Running test iteration 4 on system with 3 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 16s
+5 actionable tasks: 5 executed
+2020-03-28T09:25+01:00: Finished running test iteration 4 on system with 3 replicas
+2020-03-28T09:26+01:00: Running test iteration 5 on system with 3 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 16s
+5 actionable tasks: 5 executed
+2020-03-28T09:26+01:00: Finished running test iteration 5 on system with 3 replicas
+2020-03-28T09:26+01:00: Running test iteration 6 on system with 3 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 16s
+5 actionable tasks: 5 executed
+2020-03-28T09:27+01:00: Finished running test iteration 6 on system with 3 replicas
+2020-03-28T09:27+01:00: Running test iteration 7 on system with 3 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 16s
+5 actionable tasks: 5 executed
+2020-03-28T09:28+01:00: Finished running test iteration 7 on system with 3 replicas
+2020-03-28T09:28+01:00: Running test iteration 8 on system with 3 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 16s
+5 actionable tasks: 5 executed
+2020-03-28T09:28+01:00: Finished running test iteration 8 on system with 3 replicas
+2020-03-28T09:29+01:00: Running test iteration 9 on system with 3 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 16s
+5 actionable tasks: 5 executed
+2020-03-28T09:29+01:00: Finished running test iteration 9 on system with 3 replicas
+2020-03-28T09:30+01:00: Running test iteration 10 on system with 3 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 16s
+5 actionable tasks: 5 executed
+2020-03-28T09:30+01:00: Finished running test iteration 10 on system with 3 replicas
+2020-03-28T09:30+01:00: Running test iteration 11 on system with 3 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 16s
+5 actionable tasks: 5 executed
+2020-03-28T09:31+01:00: Finished running test iteration 11 on system with 3 replicas
+2020-03-28T09:31+01:00: Running test iteration 12 on system with 3 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 16s
+5 actionable tasks: 5 executed
+2020-03-28T09:32+01:00: Finished running test iteration 12 on system with 3 replicas
+2020-03-28T09:32+01:00: Running test iteration 13 on system with 3 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 16s
+5 actionable tasks: 5 executed
+2020-03-28T09:32+01:00: Finished running test iteration 13 on system with 3 replicas
+2020-03-28T09:33+01:00: Running test iteration 14 on system with 3 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 16s
+5 actionable tasks: 5 executed
+2020-03-28T09:33+01:00: Finished running test iteration 14 on system with 3 replicas
+2020-03-28T09:34+01:00: Running test iteration 15 on system with 3 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 16s
+5 actionable tasks: 5 executed
+2020-03-28T09:34+01:00: Finished running test iteration 15 on system with 3 replicas
+2020-03-28T09:34+01:00: Running test iteration 16 on system with 3 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 16s
+5 actionable tasks: 5 executed
+2020-03-28T09:35+01:00: Finished running test iteration 16 on system with 3 replicas
+2020-03-28T09:35+01:00: Running test iteration 17 on system with 3 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 16s
+5 actionable tasks: 5 executed
+2020-03-28T09:35+01:00: Finished running test iteration 17 on system with 3 replicas
+2020-03-28T09:36+01:00: Running test iteration 18 on system with 3 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 16s
+5 actionable tasks: 5 executed
+2020-03-28T09:36+01:00: Finished running test iteration 18 on system with 3 replicas
+2020-03-28T09:37+01:00: Running test iteration 19 on system with 3 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 16s
+5 actionable tasks: 5 executed
+2020-03-28T09:37+01:00: Finished running test iteration 19 on system with 3 replicas
+2020-03-28T09:38+01:00: Running test iteration 20 on system with 3 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 16s
+5 actionable tasks: 5 executed
+2020-03-28T09:38+01:00: Finished running test iteration 20 on system with 3 replicas
+2020-03-28T09:38+01:00: Terminating EC2 instances
+> Task :terminateEC2Instances
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+Use '--warning-mode all' to show the individual deprecation warnings.
+See https://docs.gradle.org/6.2.2/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD SUCCESSFUL in 1s
+1 actionable task: 1 executed
+2020-03-28T09:38+01:00: Deploy system with 5 replicas
+Deploying Lookup Service 
+> Task :deployEC2Instance
+> Task :waitInstanceStatusStable
+Access instance with: ssh ubuntu@ec2-54-159-91-10.compute-1.amazonaws.com
+
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala UP-TO-DATE
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes UP-TO-DATE
+> Task :DistributedObject:jar UP-TO-DATE
+> Task :DistributedObject:startScripts UP-TO-DATE
+> Task :DistributedObject:distTar UP-TO-DATE
+> Task :DistributedObject:distZip UP-TO-DATE
+> Task :DistributedObject:shadowJar UP-TO-DATE
+> Task :DistributedObject:startShadowScripts UP-TO-DATE
+> Task :DistributedObject:shadowDistTar UP-TO-DATE
+> Task :DistributedObject:shadowDistZip UP-TO-DATE
+> Task :DistributedObject:assemble UP-TO-DATE
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:test NO-SOURCE
+> Task :DistributedObject:check UP-TO-DATE
+> Task :DistributedObject:build UP-TO-DATE
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala UP-TO-DATE
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes UP-TO-DATE
+> Task :LookupService:jar UP-TO-DATE
+> Task :LookupService:startScripts UP-TO-DATE
+> Task :LookupService:distTar UP-TO-DATE
+> Task :LookupService:distZip UP-TO-DATE
+> Task :LookupService:shadowJar UP-TO-DATE
+> Task :LookupService:startShadowScripts UP-TO-DATE
+> Task :LookupService:shadowDistTar UP-TO-DATE
+> Task :LookupService:shadowDistZip UP-TO-DATE
+> Task :LookupService:assemble UP-TO-DATE
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala UP-TO-DATE
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses UP-TO-DATE
+> Task :LookupService:test UP-TO-DATE
+> Task :LookupService:check UP-TO-DATE
+> Task :LookupService:build UP-TO-DATE
+> Task :deployLookupService
+Copying LookupService to the EC2 instance
+Warning: Permanently added 'ec2-54-159-91-10.compute-1.amazonaws.com,54.159.91.10' (ECDSA) to the list of known hosts.
+Starting Lookup Service on the EC2 instance
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+Use '--warning-mode all' to show the individual deprecation warnings.
+See https://docs.gradle.org/6.2.2/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD SUCCESSFUL in 2m 19s
+23 actionable tasks: 3 executed, 20 up-to-date
+Deploying Distributed Object 1
+> Task :deployEC2Instance
+> Task :waitInstanceStatusStable
+Access instance with: ssh ubuntu@ec2-3-87-26-120.compute-1.amazonaws.com
+
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala UP-TO-DATE
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes UP-TO-DATE
+> Task :DistributedObject:jar UP-TO-DATE
+> Task :DistributedObject:startScripts UP-TO-DATE
+> Task :DistributedObject:distTar UP-TO-DATE
+> Task :DistributedObject:distZip UP-TO-DATE
+> Task :DistributedObject:shadowJar UP-TO-DATE
+> Task :DistributedObject:startShadowScripts UP-TO-DATE
+> Task :DistributedObject:shadowDistTar UP-TO-DATE
+> Task :DistributedObject:shadowDistZip UP-TO-DATE
+> Task :DistributedObject:assemble UP-TO-DATE
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:test NO-SOURCE
+> Task :DistributedObject:check UP-TO-DATE
+> Task :DistributedObject:build UP-TO-DATE
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala UP-TO-DATE
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes UP-TO-DATE
+> Task :LookupService:jar UP-TO-DATE
+> Task :LookupService:startScripts UP-TO-DATE
+> Task :LookupService:distTar UP-TO-DATE
+> Task :LookupService:distZip UP-TO-DATE
+> Task :LookupService:shadowJar UP-TO-DATE
+> Task :LookupService:startShadowScripts UP-TO-DATE
+> Task :LookupService:shadowDistTar UP-TO-DATE
+> Task :LookupService:shadowDistZip UP-TO-DATE
+> Task :LookupService:assemble UP-TO-DATE
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala UP-TO-DATE
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses UP-TO-DATE
+> Task :LookupService:test UP-TO-DATE
+> Task :LookupService:check UP-TO-DATE
+> Task :LookupService:build UP-TO-DATE
+> Task :deployDistributedObject
+Copying Distributed Object to the EC2 instance
+Warning: Permanently added 'ec2-3-87-26-120.compute-1.amazonaws.com,3.87.26.120' (ECDSA) to the list of known hosts.
+Starting Distributed Object on the EC2 instance
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+Use '--warning-mode all' to show the individual deprecation warnings.
+See https://docs.gradle.org/6.2.2/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD SUCCESSFUL in 2m 18s
+23 actionable tasks: 3 executed, 20 up-to-date
+Deploying Distributed Object 2
+> Task :deployEC2Instance
+> Task :waitInstanceStatusStable
+Access instance with: ssh ubuntu@ec2-34-203-216-163.compute-1.amazonaws.com
+
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala UP-TO-DATE
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes UP-TO-DATE
+> Task :DistributedObject:jar UP-TO-DATE
+> Task :DistributedObject:startScripts UP-TO-DATE
+> Task :DistributedObject:distTar UP-TO-DATE
+> Task :DistributedObject:distZip UP-TO-DATE
+> Task :DistributedObject:shadowJar UP-TO-DATE
+> Task :DistributedObject:startShadowScripts UP-TO-DATE
+> Task :DistributedObject:shadowDistTar UP-TO-DATE
+> Task :DistributedObject:shadowDistZip UP-TO-DATE
+> Task :DistributedObject:assemble UP-TO-DATE
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:test NO-SOURCE
+> Task :DistributedObject:check UP-TO-DATE
+> Task :DistributedObject:build UP-TO-DATE
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala UP-TO-DATE
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes UP-TO-DATE
+> Task :LookupService:jar UP-TO-DATE
+> Task :LookupService:startScripts UP-TO-DATE
+> Task :LookupService:distTar UP-TO-DATE
+> Task :LookupService:distZip UP-TO-DATE
+> Task :LookupService:shadowJar UP-TO-DATE
+> Task :LookupService:startShadowScripts UP-TO-DATE
+> Task :LookupService:shadowDistTar UP-TO-DATE
+> Task :LookupService:shadowDistZip UP-TO-DATE
+> Task :LookupService:assemble UP-TO-DATE
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala UP-TO-DATE
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses UP-TO-DATE
+> Task :LookupService:test UP-TO-DATE
+> Task :LookupService:check UP-TO-DATE
+> Task :LookupService:build UP-TO-DATE
+> Task :deployDistributedObject
+Copying Distributed Object to the EC2 instance
+Warning: Permanently added 'ec2-34-203-216-163.compute-1.amazonaws.com,34.203.216.163' (ECDSA) to the list of known hosts.
+Starting Distributed Object on the EC2 instance
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+Use '--warning-mode all' to show the individual deprecation warnings.
+See https://docs.gradle.org/6.2.2/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD SUCCESSFUL in 1m 45s
+23 actionable tasks: 3 executed, 20 up-to-date
+Deploying Distributed Object 3
+> Task :deployEC2Instance
+> Task :waitInstanceStatusStable
+Access instance with: ssh ubuntu@ec2-3-86-144-232.compute-1.amazonaws.com
+
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala UP-TO-DATE
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes UP-TO-DATE
+> Task :DistributedObject:jar UP-TO-DATE
+> Task :DistributedObject:startScripts UP-TO-DATE
+> Task :DistributedObject:distTar UP-TO-DATE
+> Task :DistributedObject:distZip UP-TO-DATE
+> Task :DistributedObject:shadowJar UP-TO-DATE
+> Task :DistributedObject:startShadowScripts UP-TO-DATE
+> Task :DistributedObject:shadowDistTar UP-TO-DATE
+> Task :DistributedObject:shadowDistZip UP-TO-DATE
+> Task :DistributedObject:assemble UP-TO-DATE
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:test NO-SOURCE
+> Task :DistributedObject:check UP-TO-DATE
+> Task :DistributedObject:build UP-TO-DATE
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala UP-TO-DATE
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes UP-TO-DATE
+> Task :LookupService:jar UP-TO-DATE
+> Task :LookupService:startScripts UP-TO-DATE
+> Task :LookupService:distTar UP-TO-DATE
+> Task :LookupService:distZip UP-TO-DATE
+> Task :LookupService:shadowJar UP-TO-DATE
+> Task :LookupService:startShadowScripts UP-TO-DATE
+> Task :LookupService:shadowDistTar UP-TO-DATE
+> Task :LookupService:shadowDistZip UP-TO-DATE
+> Task :LookupService:assemble UP-TO-DATE
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala UP-TO-DATE
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses UP-TO-DATE
+> Task :LookupService:test UP-TO-DATE
+> Task :LookupService:check UP-TO-DATE
+> Task :LookupService:build UP-TO-DATE
+> Task :deployDistributedObject
+Copying Distributed Object to the EC2 instance
+Warning: Permanently added 'ec2-3-86-144-232.compute-1.amazonaws.com,3.86.144.232' (ECDSA) to the list of known hosts.
+Starting Distributed Object on the EC2 instance
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+Use '--warning-mode all' to show the individual deprecation warnings.
+See https://docs.gradle.org/6.2.2/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD SUCCESSFUL in 2m 17s
+23 actionable tasks: 3 executed, 20 up-to-date
+Deploying Distributed Object 4
+> Task :deployEC2Instance
+> Task :waitInstanceStatusStable
+Access instance with: ssh ubuntu@ec2-3-83-124-122.compute-1.amazonaws.com
+
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala UP-TO-DATE
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes UP-TO-DATE
+> Task :DistributedObject:jar UP-TO-DATE
+> Task :DistributedObject:startScripts UP-TO-DATE
+> Task :DistributedObject:distTar UP-TO-DATE
+> Task :DistributedObject:distZip UP-TO-DATE
+> Task :DistributedObject:shadowJar UP-TO-DATE
+> Task :DistributedObject:startShadowScripts UP-TO-DATE
+> Task :DistributedObject:shadowDistTar UP-TO-DATE
+> Task :DistributedObject:shadowDistZip UP-TO-DATE
+> Task :DistributedObject:assemble UP-TO-DATE
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:test NO-SOURCE
+> Task :DistributedObject:check UP-TO-DATE
+> Task :DistributedObject:build UP-TO-DATE
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala UP-TO-DATE
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes UP-TO-DATE
+> Task :LookupService:jar UP-TO-DATE
+> Task :LookupService:startScripts UP-TO-DATE
+> Task :LookupService:distTar UP-TO-DATE
+> Task :LookupService:distZip UP-TO-DATE
+> Task :LookupService:shadowJar UP-TO-DATE
+> Task :LookupService:startShadowScripts UP-TO-DATE
+> Task :LookupService:shadowDistTar UP-TO-DATE
+> Task :LookupService:shadowDistZip UP-TO-DATE
+> Task :LookupService:assemble UP-TO-DATE
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala UP-TO-DATE
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses UP-TO-DATE
+> Task :LookupService:test UP-TO-DATE
+> Task :LookupService:check UP-TO-DATE
+> Task :LookupService:build UP-TO-DATE
+> Task :deployDistributedObject
+Copying Distributed Object to the EC2 instance
+Warning: Permanently added 'ec2-3-83-124-122.compute-1.amazonaws.com,3.83.124.122' (ECDSA) to the list of known hosts.
+Starting Distributed Object on the EC2 instance
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+Use '--warning-mode all' to show the individual deprecation warnings.
+See https://docs.gradle.org/6.2.2/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD SUCCESSFUL in 1m 52s
+23 actionable tasks: 3 executed, 20 up-to-date
+Deploying Distributed Object 5
+> Task :deployEC2Instance
+> Task :waitInstanceStatusStable
+Access instance with: ssh ubuntu@ec2-35-173-134-27.compute-1.amazonaws.com
+
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala UP-TO-DATE
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes UP-TO-DATE
+> Task :DistributedObject:jar UP-TO-DATE
+> Task :DistributedObject:startScripts UP-TO-DATE
+> Task :DistributedObject:distTar UP-TO-DATE
+> Task :DistributedObject:distZip UP-TO-DATE
+> Task :DistributedObject:shadowJar UP-TO-DATE
+> Task :DistributedObject:startShadowScripts UP-TO-DATE
+> Task :DistributedObject:shadowDistTar UP-TO-DATE
+> Task :DistributedObject:shadowDistZip UP-TO-DATE
+> Task :DistributedObject:assemble UP-TO-DATE
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:test NO-SOURCE
+> Task :DistributedObject:check UP-TO-DATE
+> Task :DistributedObject:build UP-TO-DATE
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala UP-TO-DATE
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes UP-TO-DATE
+> Task :LookupService:jar UP-TO-DATE
+> Task :LookupService:startScripts UP-TO-DATE
+> Task :LookupService:distTar UP-TO-DATE
+> Task :LookupService:distZip UP-TO-DATE
+> Task :LookupService:shadowJar UP-TO-DATE
+> Task :LookupService:startShadowScripts UP-TO-DATE
+> Task :LookupService:shadowDistTar UP-TO-DATE
+> Task :LookupService:shadowDistZip UP-TO-DATE
+> Task :LookupService:assemble UP-TO-DATE
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala UP-TO-DATE
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses UP-TO-DATE
+> Task :LookupService:test UP-TO-DATE
+> Task :LookupService:check UP-TO-DATE
+> Task :LookupService:build UP-TO-DATE
+> Task :deployDistributedObject
+Copying Distributed Object to the EC2 instance
+Warning: Permanently added 'ec2-35-173-134-27.compute-1.amazonaws.com,35.173.134.27' (ECDSA) to the list of known hosts.
+Starting Distributed Object on the EC2 instance
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+Use '--warning-mode all' to show the individual deprecation warnings.
+See https://docs.gradle.org/6.2.2/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD SUCCESSFUL in 1m 44s
+23 actionable tasks: 3 executed, 20 up-to-date
+2020-03-28T09:53+01:00: Finished deploying system with 5 replicas
+2020-03-28T09:54+01:00: Running test iteration 1 on system with 5 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 20s
+5 actionable tasks: 5 executed
+2020-03-28T09:54+01:00: Finished running test iteration 1 on system with 5 replicas
+2020-03-28T09:54+01:00: Running test iteration 2 on system with 5 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 18s
+5 actionable tasks: 5 executed
+2020-03-28T09:55+01:00: Finished running test iteration 2 on system with 5 replicas
+2020-03-28T09:55+01:00: Running test iteration 3 on system with 5 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 18s
+5 actionable tasks: 5 executed
+2020-03-28T09:56+01:00: Finished running test iteration 3 on system with 5 replicas
+2020-03-28T09:56+01:00: Running test iteration 4 on system with 5 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 18s
+5 actionable tasks: 5 executed
+2020-03-28T09:56+01:00: Finished running test iteration 4 on system with 5 replicas
+2020-03-28T09:57+01:00: Running test iteration 5 on system with 5 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 18s
+5 actionable tasks: 5 executed
+2020-03-28T09:57+01:00: Finished running test iteration 5 on system with 5 replicas
+2020-03-28T09:58+01:00: Running test iteration 6 on system with 5 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 18s
+5 actionable tasks: 5 executed
+2020-03-28T09:58+01:00: Finished running test iteration 6 on system with 5 replicas
+2020-03-28T09:58+01:00: Running test iteration 7 on system with 5 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 18s
+5 actionable tasks: 5 executed
+2020-03-28T09:59+01:00: Finished running test iteration 7 on system with 5 replicas
+2020-03-28T09:59+01:00: Running test iteration 8 on system with 5 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 18s
+5 actionable tasks: 5 executed
+2020-03-28T10:00+01:00: Finished running test iteration 8 on system with 5 replicas
+2020-03-28T10:00+01:00: Running test iteration 9 on system with 5 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 18s
+5 actionable tasks: 5 executed
+2020-03-28T10:00+01:00: Finished running test iteration 9 on system with 5 replicas
+2020-03-28T10:01+01:00: Running test iteration 10 on system with 5 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 18s
+5 actionable tasks: 5 executed
+2020-03-28T10:01+01:00: Finished running test iteration 10 on system with 5 replicas
+2020-03-28T10:02+01:00: Running test iteration 11 on system with 5 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 18s
+5 actionable tasks: 5 executed
+2020-03-28T10:02+01:00: Finished running test iteration 11 on system with 5 replicas
+2020-03-28T10:03+01:00: Running test iteration 12 on system with 5 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 17s
+5 actionable tasks: 5 executed
+2020-03-28T10:03+01:00: Finished running test iteration 12 on system with 5 replicas
+2020-03-28T10:03+01:00: Running test iteration 13 on system with 5 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 17s
+5 actionable tasks: 5 executed
+2020-03-28T10:04+01:00: Finished running test iteration 13 on system with 5 replicas
+2020-03-28T10:04+01:00: Running test iteration 14 on system with 5 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 17s
+5 actionable tasks: 5 executed
+2020-03-28T10:04+01:00: Finished running test iteration 14 on system with 5 replicas
+2020-03-28T10:05+01:00: Running test iteration 15 on system with 5 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 17s
+5 actionable tasks: 5 executed
+2020-03-28T10:05+01:00: Finished running test iteration 15 on system with 5 replicas
+2020-03-28T10:06+01:00: Running test iteration 16 on system with 5 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 17s
+5 actionable tasks: 5 executed
+2020-03-28T10:06+01:00: Finished running test iteration 16 on system with 5 replicas
+2020-03-28T10:07+01:00: Running test iteration 17 on system with 5 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 17s
+5 actionable tasks: 5 executed
+2020-03-28T10:07+01:00: Finished running test iteration 17 on system with 5 replicas
+2020-03-28T10:07+01:00: Running test iteration 18 on system with 5 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 17s
+5 actionable tasks: 5 executed
+2020-03-28T10:08+01:00: Finished running test iteration 18 on system with 5 replicas
+2020-03-28T10:08+01:00: Running test iteration 19 on system with 5 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 17s
+5 actionable tasks: 5 executed
+2020-03-28T10:09+01:00: Finished running test iteration 19 on system with 5 replicas
+2020-03-28T10:09+01:00: Running test iteration 20 on system with 5 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 17s
+5 actionable tasks: 5 executed
+2020-03-28T10:09+01:00: Finished running test iteration 20 on system with 5 replicas
+2020-03-28T10:10+01:00: Terminating EC2 instances
+> Task :terminateEC2Instances
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+Use '--warning-mode all' to show the individual deprecation warnings.
+See https://docs.gradle.org/6.2.2/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD SUCCESSFUL in 1s
+1 actionable task: 1 executed
+2020-03-28T10:10+01:00: Deploy system with 10 replicas
+Deploying Lookup Service 
+> Task :deployEC2Instance
+> Task :waitInstanceStatusStable
+Access instance with: ssh ubuntu@ec2-3-82-171-7.compute-1.amazonaws.com
+
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala UP-TO-DATE
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes UP-TO-DATE
+> Task :DistributedObject:jar UP-TO-DATE
+> Task :DistributedObject:startScripts UP-TO-DATE
+> Task :DistributedObject:distTar UP-TO-DATE
+> Task :DistributedObject:distZip UP-TO-DATE
+> Task :DistributedObject:shadowJar UP-TO-DATE
+> Task :DistributedObject:startShadowScripts UP-TO-DATE
+> Task :DistributedObject:shadowDistTar UP-TO-DATE
+> Task :DistributedObject:shadowDistZip UP-TO-DATE
+> Task :DistributedObject:assemble UP-TO-DATE
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:test NO-SOURCE
+> Task :DistributedObject:check UP-TO-DATE
+> Task :DistributedObject:build UP-TO-DATE
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala UP-TO-DATE
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes UP-TO-DATE
+> Task :LookupService:jar UP-TO-DATE
+> Task :LookupService:startScripts UP-TO-DATE
+> Task :LookupService:distTar UP-TO-DATE
+> Task :LookupService:distZip UP-TO-DATE
+> Task :LookupService:shadowJar UP-TO-DATE
+> Task :LookupService:startShadowScripts UP-TO-DATE
+> Task :LookupService:shadowDistTar UP-TO-DATE
+> Task :LookupService:shadowDistZip UP-TO-DATE
+> Task :LookupService:assemble UP-TO-DATE
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala UP-TO-DATE
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses UP-TO-DATE
+> Task :LookupService:test UP-TO-DATE
+> Task :LookupService:check UP-TO-DATE
+> Task :LookupService:build UP-TO-DATE
+> Task :deployLookupService
+Copying LookupService to the EC2 instance
+Warning: Permanently added 'ec2-3-82-171-7.compute-1.amazonaws.com,3.82.171.7' (ECDSA) to the list of known hosts.
+Starting Lookup Service on the EC2 instance
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+Use '--warning-mode all' to show the individual deprecation warnings.
+See https://docs.gradle.org/6.2.2/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD SUCCESSFUL in 2m 2s
+23 actionable tasks: 3 executed, 20 up-to-date
+Deploying Distributed Object 1
+> Task :deployEC2Instance
+> Task :waitInstanceStatusStable
+Access instance with: ssh ubuntu@ec2-3-89-131-181.compute-1.amazonaws.com
+
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala UP-TO-DATE
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes UP-TO-DATE
+> Task :DistributedObject:jar UP-TO-DATE
+> Task :DistributedObject:startScripts UP-TO-DATE
+> Task :DistributedObject:distTar UP-TO-DATE
+> Task :DistributedObject:distZip UP-TO-DATE
+> Task :DistributedObject:shadowJar UP-TO-DATE
+> Task :DistributedObject:startShadowScripts UP-TO-DATE
+> Task :DistributedObject:shadowDistTar UP-TO-DATE
+> Task :DistributedObject:shadowDistZip UP-TO-DATE
+> Task :DistributedObject:assemble UP-TO-DATE
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:test NO-SOURCE
+> Task :DistributedObject:check UP-TO-DATE
+> Task :DistributedObject:build UP-TO-DATE
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala UP-TO-DATE
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes UP-TO-DATE
+> Task :LookupService:jar UP-TO-DATE
+> Task :LookupService:startScripts UP-TO-DATE
+> Task :LookupService:distTar UP-TO-DATE
+> Task :LookupService:distZip UP-TO-DATE
+> Task :LookupService:shadowJar UP-TO-DATE
+> Task :LookupService:startShadowScripts UP-TO-DATE
+> Task :LookupService:shadowDistTar UP-TO-DATE
+> Task :LookupService:shadowDistZip UP-TO-DATE
+> Task :LookupService:assemble UP-TO-DATE
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala UP-TO-DATE
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses UP-TO-DATE
+> Task :LookupService:test UP-TO-DATE
+> Task :LookupService:check UP-TO-DATE
+> Task :LookupService:build UP-TO-DATE
+> Task :deployDistributedObject
+Copying Distributed Object to the EC2 instance
+Warning: Permanently added 'ec2-3-89-131-181.compute-1.amazonaws.com,3.89.131.181' (ECDSA) to the list of known hosts.
+Starting Distributed Object on the EC2 instance
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+Use '--warning-mode all' to show the individual deprecation warnings.
+See https://docs.gradle.org/6.2.2/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD SUCCESSFUL in 1m 56s
+23 actionable tasks: 3 executed, 20 up-to-date
+Deploying Distributed Object 2
+> Task :deployEC2Instance
+> Task :waitInstanceStatusStable
+Access instance with: ssh ubuntu@ec2-3-90-64-183.compute-1.amazonaws.com
+
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala UP-TO-DATE
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes UP-TO-DATE
+> Task :DistributedObject:jar UP-TO-DATE
+> Task :DistributedObject:startScripts UP-TO-DATE
+> Task :DistributedObject:distTar UP-TO-DATE
+> Task :DistributedObject:distZip UP-TO-DATE
+> Task :DistributedObject:shadowJar UP-TO-DATE
+> Task :DistributedObject:startShadowScripts UP-TO-DATE
+> Task :DistributedObject:shadowDistTar UP-TO-DATE
+> Task :DistributedObject:shadowDistZip UP-TO-DATE
+> Task :DistributedObject:assemble UP-TO-DATE
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:test NO-SOURCE
+> Task :DistributedObject:check UP-TO-DATE
+> Task :DistributedObject:build UP-TO-DATE
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala UP-TO-DATE
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes UP-TO-DATE
+> Task :LookupService:jar UP-TO-DATE
+> Task :LookupService:startScripts UP-TO-DATE
+> Task :LookupService:distTar UP-TO-DATE
+> Task :LookupService:distZip UP-TO-DATE
+> Task :LookupService:shadowJar UP-TO-DATE
+> Task :LookupService:startShadowScripts UP-TO-DATE
+> Task :LookupService:shadowDistTar UP-TO-DATE
+> Task :LookupService:shadowDistZip UP-TO-DATE
+> Task :LookupService:assemble UP-TO-DATE
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala UP-TO-DATE
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses UP-TO-DATE
+> Task :LookupService:test UP-TO-DATE
+> Task :LookupService:check UP-TO-DATE
+> Task :LookupService:build UP-TO-DATE
+> Task :deployDistributedObject
+Copying Distributed Object to the EC2 instance
+Warning: Permanently added 'ec2-3-90-64-183.compute-1.amazonaws.com,3.90.64.183' (ECDSA) to the list of known hosts.
+Starting Distributed Object on the EC2 instance
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+Use '--warning-mode all' to show the individual deprecation warnings.
+See https://docs.gradle.org/6.2.2/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD SUCCESSFUL in 2m 7s
+23 actionable tasks: 3 executed, 20 up-to-date
+Deploying Distributed Object 3
+> Task :deployEC2Instance
+> Task :waitInstanceStatusStable
+Access instance with: ssh ubuntu@ec2-3-92-182-172.compute-1.amazonaws.com
+
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala UP-TO-DATE
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes UP-TO-DATE
+> Task :DistributedObject:jar UP-TO-DATE
+> Task :DistributedObject:startScripts UP-TO-DATE
+> Task :DistributedObject:distTar UP-TO-DATE
+> Task :DistributedObject:distZip UP-TO-DATE
+> Task :DistributedObject:shadowJar UP-TO-DATE
+> Task :DistributedObject:startShadowScripts UP-TO-DATE
+> Task :DistributedObject:shadowDistTar UP-TO-DATE
+> Task :DistributedObject:shadowDistZip UP-TO-DATE
+> Task :DistributedObject:assemble UP-TO-DATE
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:test NO-SOURCE
+> Task :DistributedObject:check UP-TO-DATE
+> Task :DistributedObject:build UP-TO-DATE
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala UP-TO-DATE
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes UP-TO-DATE
+> Task :LookupService:jar UP-TO-DATE
+> Task :LookupService:startScripts UP-TO-DATE
+> Task :LookupService:distTar UP-TO-DATE
+> Task :LookupService:distZip UP-TO-DATE
+> Task :LookupService:shadowJar UP-TO-DATE
+> Task :LookupService:startShadowScripts UP-TO-DATE
+> Task :LookupService:shadowDistTar UP-TO-DATE
+> Task :LookupService:shadowDistZip UP-TO-DATE
+> Task :LookupService:assemble UP-TO-DATE
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala UP-TO-DATE
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses UP-TO-DATE
+> Task :LookupService:test UP-TO-DATE
+> Task :LookupService:check UP-TO-DATE
+> Task :LookupService:build UP-TO-DATE
+> Task :deployDistributedObject
+Copying Distributed Object to the EC2 instance
+Warning: Permanently added 'ec2-3-92-182-172.compute-1.amazonaws.com,3.92.182.172' (ECDSA) to the list of known hosts.
+Starting Distributed Object on the EC2 instance
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+Use '--warning-mode all' to show the individual deprecation warnings.
+See https://docs.gradle.org/6.2.2/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD SUCCESSFUL in 2m 20s
+23 actionable tasks: 3 executed, 20 up-to-date
+Deploying Distributed Object 4
+> Task :deployEC2Instance
+> Task :waitInstanceStatusStable
+Access instance with: ssh ubuntu@ec2-54-174-162-244.compute-1.amazonaws.com
+
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala UP-TO-DATE
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes UP-TO-DATE
+> Task :DistributedObject:jar UP-TO-DATE
+> Task :DistributedObject:startScripts UP-TO-DATE
+> Task :DistributedObject:distTar UP-TO-DATE
+> Task :DistributedObject:distZip UP-TO-DATE
+> Task :DistributedObject:shadowJar UP-TO-DATE
+> Task :DistributedObject:startShadowScripts UP-TO-DATE
+> Task :DistributedObject:shadowDistTar UP-TO-DATE
+> Task :DistributedObject:shadowDistZip UP-TO-DATE
+> Task :DistributedObject:assemble UP-TO-DATE
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:test NO-SOURCE
+> Task :DistributedObject:check UP-TO-DATE
+> Task :DistributedObject:build UP-TO-DATE
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala UP-TO-DATE
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes UP-TO-DATE
+> Task :LookupService:jar UP-TO-DATE
+> Task :LookupService:startScripts UP-TO-DATE
+> Task :LookupService:distTar UP-TO-DATE
+> Task :LookupService:distZip UP-TO-DATE
+> Task :LookupService:shadowJar UP-TO-DATE
+> Task :LookupService:startShadowScripts UP-TO-DATE
+> Task :LookupService:shadowDistTar UP-TO-DATE
+> Task :LookupService:shadowDistZip UP-TO-DATE
+> Task :LookupService:assemble UP-TO-DATE
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala UP-TO-DATE
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses UP-TO-DATE
+> Task :LookupService:test UP-TO-DATE
+> Task :LookupService:check UP-TO-DATE
+> Task :LookupService:build UP-TO-DATE
+> Task :deployDistributedObject
+Copying Distributed Object to the EC2 instance
+Warning: Permanently added 'ec2-54-174-162-244.compute-1.amazonaws.com,54.174.162.244' (ECDSA) to the list of known hosts.
+Starting Distributed Object on the EC2 instance
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+Use '--warning-mode all' to show the individual deprecation warnings.
+See https://docs.gradle.org/6.2.2/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD SUCCESSFUL in 1m 44s
+23 actionable tasks: 3 executed, 20 up-to-date
+Deploying Distributed Object 5
+> Task :deployEC2Instance
+> Task :waitInstanceStatusStable
+Access instance with: ssh ubuntu@ec2-35-175-147-173.compute-1.amazonaws.com
+
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala UP-TO-DATE
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes UP-TO-DATE
+> Task :DistributedObject:jar UP-TO-DATE
+> Task :DistributedObject:startScripts UP-TO-DATE
+> Task :DistributedObject:distTar UP-TO-DATE
+> Task :DistributedObject:distZip UP-TO-DATE
+> Task :DistributedObject:shadowJar UP-TO-DATE
+> Task :DistributedObject:startShadowScripts UP-TO-DATE
+> Task :DistributedObject:shadowDistTar UP-TO-DATE
+> Task :DistributedObject:shadowDistZip UP-TO-DATE
+> Task :DistributedObject:assemble UP-TO-DATE
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:test NO-SOURCE
+> Task :DistributedObject:check UP-TO-DATE
+> Task :DistributedObject:build UP-TO-DATE
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala UP-TO-DATE
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes UP-TO-DATE
+> Task :LookupService:jar UP-TO-DATE
+> Task :LookupService:startScripts UP-TO-DATE
+> Task :LookupService:distTar UP-TO-DATE
+> Task :LookupService:distZip UP-TO-DATE
+> Task :LookupService:shadowJar UP-TO-DATE
+> Task :LookupService:startShadowScripts UP-TO-DATE
+> Task :LookupService:shadowDistTar UP-TO-DATE
+> Task :LookupService:shadowDistZip UP-TO-DATE
+> Task :LookupService:assemble UP-TO-DATE
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala UP-TO-DATE
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses UP-TO-DATE
+> Task :LookupService:test UP-TO-DATE
+> Task :LookupService:check UP-TO-DATE
+> Task :LookupService:build UP-TO-DATE
+> Task :deployDistributedObject
+Copying Distributed Object to the EC2 instance
+Warning: Permanently added 'ec2-35-175-147-173.compute-1.amazonaws.com,35.175.147.173' (ECDSA) to the list of known hosts.
+Starting Distributed Object on the EC2 instance
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+Use '--warning-mode all' to show the individual deprecation warnings.
+See https://docs.gradle.org/6.2.2/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD SUCCESSFUL in 1m 56s
+23 actionable tasks: 3 executed, 20 up-to-date
+Deploying Distributed Object 6
+> Task :deployEC2Instance
+> Task :waitInstanceStatusStable
+Access instance with: ssh ubuntu@ec2-54-174-210-145.compute-1.amazonaws.com
+
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala UP-TO-DATE
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes UP-TO-DATE
+> Task :DistributedObject:jar UP-TO-DATE
+> Task :DistributedObject:startScripts UP-TO-DATE
+> Task :DistributedObject:distTar UP-TO-DATE
+> Task :DistributedObject:distZip UP-TO-DATE
+> Task :DistributedObject:shadowJar UP-TO-DATE
+> Task :DistributedObject:startShadowScripts UP-TO-DATE
+> Task :DistributedObject:shadowDistTar UP-TO-DATE
+> Task :DistributedObject:shadowDistZip UP-TO-DATE
+> Task :DistributedObject:assemble UP-TO-DATE
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:test NO-SOURCE
+> Task :DistributedObject:check UP-TO-DATE
+> Task :DistributedObject:build UP-TO-DATE
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala UP-TO-DATE
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes UP-TO-DATE
+> Task :LookupService:jar UP-TO-DATE
+> Task :LookupService:startScripts UP-TO-DATE
+> Task :LookupService:distTar UP-TO-DATE
+> Task :LookupService:distZip UP-TO-DATE
+> Task :LookupService:shadowJar UP-TO-DATE
+> Task :LookupService:startShadowScripts UP-TO-DATE
+> Task :LookupService:shadowDistTar UP-TO-DATE
+> Task :LookupService:shadowDistZip UP-TO-DATE
+> Task :LookupService:assemble UP-TO-DATE
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala UP-TO-DATE
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses UP-TO-DATE
+> Task :LookupService:test UP-TO-DATE
+> Task :LookupService:check UP-TO-DATE
+> Task :LookupService:build UP-TO-DATE
+> Task :deployDistributedObject
+Copying Distributed Object to the EC2 instance
+Warning: Permanently added 'ec2-54-174-210-145.compute-1.amazonaws.com,54.174.210.145' (ECDSA) to the list of known hosts.
+Starting Distributed Object on the EC2 instance
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+Use '--warning-mode all' to show the individual deprecation warnings.
+See https://docs.gradle.org/6.2.2/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD SUCCESSFUL in 1m 42s
+23 actionable tasks: 3 executed, 20 up-to-date
+Deploying Distributed Object 7
+> Task :deployEC2Instance
+> Task :waitInstanceStatusStable
+Access instance with: ssh ubuntu@ec2-54-146-221-250.compute-1.amazonaws.com
+
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala UP-TO-DATE
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes UP-TO-DATE
+> Task :DistributedObject:jar UP-TO-DATE
+> Task :DistributedObject:startScripts UP-TO-DATE
+> Task :DistributedObject:distTar UP-TO-DATE
+> Task :DistributedObject:distZip UP-TO-DATE
+> Task :DistributedObject:shadowJar UP-TO-DATE
+> Task :DistributedObject:startShadowScripts UP-TO-DATE
+> Task :DistributedObject:shadowDistTar UP-TO-DATE
+> Task :DistributedObject:shadowDistZip UP-TO-DATE
+> Task :DistributedObject:assemble UP-TO-DATE
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:test NO-SOURCE
+> Task :DistributedObject:check UP-TO-DATE
+> Task :DistributedObject:build UP-TO-DATE
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala UP-TO-DATE
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes UP-TO-DATE
+> Task :LookupService:jar UP-TO-DATE
+> Task :LookupService:startScripts UP-TO-DATE
+> Task :LookupService:distTar UP-TO-DATE
+> Task :LookupService:distZip UP-TO-DATE
+> Task :LookupService:shadowJar UP-TO-DATE
+> Task :LookupService:startShadowScripts UP-TO-DATE
+> Task :LookupService:shadowDistTar UP-TO-DATE
+> Task :LookupService:shadowDistZip UP-TO-DATE
+> Task :LookupService:assemble UP-TO-DATE
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala UP-TO-DATE
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses UP-TO-DATE
+> Task :LookupService:test UP-TO-DATE
+> Task :LookupService:check UP-TO-DATE
+> Task :LookupService:build UP-TO-DATE
+> Task :deployDistributedObject
+Copying Distributed Object to the EC2 instance
+Warning: Permanently added 'ec2-54-146-221-250.compute-1.amazonaws.com,54.146.221.250' (ECDSA) to the list of known hosts.
+Starting Distributed Object on the EC2 instance
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+Use '--warning-mode all' to show the individual deprecation warnings.
+See https://docs.gradle.org/6.2.2/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD SUCCESSFUL in 1m 49s
+23 actionable tasks: 3 executed, 20 up-to-date
+Deploying Distributed Object 8
+> Task :deployEC2Instance
+> Task :waitInstanceStatusStable
+Access instance with: ssh ubuntu@ec2-3-86-195-227.compute-1.amazonaws.com
+
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala UP-TO-DATE
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes UP-TO-DATE
+> Task :DistributedObject:jar UP-TO-DATE
+> Task :DistributedObject:startScripts UP-TO-DATE
+> Task :DistributedObject:distTar UP-TO-DATE
+> Task :DistributedObject:distZip UP-TO-DATE
+> Task :DistributedObject:shadowJar UP-TO-DATE
+> Task :DistributedObject:startShadowScripts UP-TO-DATE
+> Task :DistributedObject:shadowDistTar UP-TO-DATE
+> Task :DistributedObject:shadowDistZip UP-TO-DATE
+> Task :DistributedObject:assemble UP-TO-DATE
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:test NO-SOURCE
+> Task :DistributedObject:check UP-TO-DATE
+> Task :DistributedObject:build UP-TO-DATE
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala UP-TO-DATE
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes UP-TO-DATE
+> Task :LookupService:jar UP-TO-DATE
+> Task :LookupService:startScripts UP-TO-DATE
+> Task :LookupService:distTar UP-TO-DATE
+> Task :LookupService:distZip UP-TO-DATE
+> Task :LookupService:shadowJar UP-TO-DATE
+> Task :LookupService:startShadowScripts UP-TO-DATE
+> Task :LookupService:shadowDistTar UP-TO-DATE
+> Task :LookupService:shadowDistZip UP-TO-DATE
+> Task :LookupService:assemble UP-TO-DATE
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala UP-TO-DATE
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses UP-TO-DATE
+> Task :LookupService:test UP-TO-DATE
+> Task :LookupService:check UP-TO-DATE
+> Task :LookupService:build UP-TO-DATE
+> Task :deployDistributedObject
+Copying Distributed Object to the EC2 instance
+Warning: Permanently added 'ec2-3-86-195-227.compute-1.amazonaws.com,3.86.195.227' (ECDSA) to the list of known hosts.
+Starting Distributed Object on the EC2 instance
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+Use '--warning-mode all' to show the individual deprecation warnings.
+See https://docs.gradle.org/6.2.2/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD SUCCESSFUL in 1m 43s
+23 actionable tasks: 3 executed, 20 up-to-date
+Deploying Distributed Object 9
+> Task :deployEC2Instance
+> Task :waitInstanceStatusStable
+Access instance with: ssh ubuntu@
+
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala UP-TO-DATE
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes UP-TO-DATE
+> Task :DistributedObject:jar UP-TO-DATE
+> Task :DistributedObject:startScripts UP-TO-DATE
+> Task :DistributedObject:distTar UP-TO-DATE
+> Task :DistributedObject:distZip UP-TO-DATE
+> Task :DistributedObject:shadowJar UP-TO-DATE
+> Task :DistributedObject:startShadowScripts UP-TO-DATE
+> Task :DistributedObject:shadowDistTar UP-TO-DATE
+> Task :DistributedObject:shadowDistZip UP-TO-DATE
+> Task :DistributedObject:assemble UP-TO-DATE
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:test NO-SOURCE
+> Task :DistributedObject:check UP-TO-DATE
+> Task :DistributedObject:build UP-TO-DATE
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala UP-TO-DATE
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes UP-TO-DATE
+> Task :LookupService:jar UP-TO-DATE
+> Task :LookupService:startScripts UP-TO-DATE
+> Task :LookupService:distTar UP-TO-DATE
+> Task :LookupService:distZip UP-TO-DATE
+> Task :LookupService:shadowJar UP-TO-DATE
+> Task :LookupService:startShadowScripts UP-TO-DATE
+> Task :LookupService:shadowDistTar UP-TO-DATE
+> Task :LookupService:shadowDistZip UP-TO-DATE
+> Task :LookupService:assemble UP-TO-DATE
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala UP-TO-DATE
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses UP-TO-DATE
+> Task :LookupService:test UP-TO-DATE
+> Task :LookupService:check UP-TO-DATE
+> Task :LookupService:build UP-TO-DATE
+> Task :deployDistributedObject
+Copying Distributed Object to the EC2 instance
+ssh: Could not resolve hostname : Name or service not known
+lost connection
+
+> Task :deployDistributedObject FAILED
+
+FAILURE: Build failed with an exception.
+
+* Where:
+Build file '/home/riaas/.Projects/TU Delft/GlobeReplicator/build.gradle' line: 173
+
+* What went wrong:
+Execution failed for task ':deployDistributedObject'.
+> Process 'command 'scp'' finished with non-zero exit value 1
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+Use '--warning-mode all' to show the individual deprecation warnings.
+See https://docs.gradle.org/6.2.2/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD FAILED in 2m 13s
+23 actionable tasks: 3 executed, 20 up-to-date
+Deploying Distributed Object 10
+> Task :deployEC2Instance
+> Task :waitInstanceStatusStable
+Access instance with: ssh ubuntu@
+
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala UP-TO-DATE
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes UP-TO-DATE
+> Task :DistributedObject:jar UP-TO-DATE
+> Task :DistributedObject:startScripts UP-TO-DATE
+> Task :DistributedObject:distTar UP-TO-DATE
+> Task :DistributedObject:distZip UP-TO-DATE
+> Task :DistributedObject:shadowJar UP-TO-DATE
+> Task :DistributedObject:startShadowScripts UP-TO-DATE
+> Task :DistributedObject:shadowDistTar UP-TO-DATE
+> Task :DistributedObject:shadowDistZip UP-TO-DATE
+> Task :DistributedObject:assemble UP-TO-DATE
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:test NO-SOURCE
+> Task :DistributedObject:check UP-TO-DATE
+> Task :DistributedObject:build UP-TO-DATE
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala UP-TO-DATE
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes UP-TO-DATE
+> Task :LookupService:jar UP-TO-DATE
+> Task :LookupService:startScripts UP-TO-DATE
+> Task :LookupService:distTar UP-TO-DATE
+> Task :LookupService:distZip UP-TO-DATE
+> Task :LookupService:shadowJar UP-TO-DATE
+> Task :LookupService:startShadowScripts UP-TO-DATE
+> Task :LookupService:shadowDistTar UP-TO-DATE
+> Task :LookupService:shadowDistZip UP-TO-DATE
+> Task :LookupService:assemble UP-TO-DATE
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala UP-TO-DATE
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses UP-TO-DATE
+> Task :LookupService:test UP-TO-DATE
+> Task :LookupService:check UP-TO-DATE
+> Task :LookupService:build UP-TO-DATE
+> Task :deployDistributedObject
+Copying Distributed Object to the EC2 instance
+ssh: Could not resolve hostname : Name or service not known
+lost connection
+
+> Task :deployDistributedObject FAILED
+
+FAILURE: Build failed with an exception.
+
+* Where:
+Build file '/home/riaas/.Projects/TU Delft/GlobeReplicator/build.gradle' line: 173
+
+* What went wrong:
+Execution failed for task ':deployDistributedObject'.
+> Process 'command 'scp'' finished with non-zero exit value 1
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+Use '--warning-mode all' to show the individual deprecation warnings.
+See https://docs.gradle.org/6.2.2/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD FAILED in 2m 3s
+23 actionable tasks: 3 executed, 20 up-to-date
+2020-03-28T10:34+01:00: Finished deploying system with 10 replicas
+2020-03-28T10:35+01:00: Running test iteration 1 on system with 10 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 23s
+5 actionable tasks: 5 executed
+2020-03-28T10:36+01:00: Finished running test iteration 1 on system with 10 replicas
+2020-03-28T10:36+01:00: Running test iteration 2 on system with 10 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 20s
+5 actionable tasks: 5 executed
+2020-03-28T10:37+01:00: Finished running test iteration 2 on system with 10 replicas
+2020-03-28T10:37+01:00: Running test iteration 3 on system with 10 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 20s
+5 actionable tasks: 5 executed
+2020-03-28T10:37+01:00: Finished running test iteration 3 on system with 10 replicas
+2020-03-28T10:38+01:00: Running test iteration 4 on system with 10 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 20s
+5 actionable tasks: 5 executed
+2020-03-28T10:38+01:00: Finished running test iteration 4 on system with 10 replicas
+2020-03-28T10:39+01:00: Running test iteration 5 on system with 10 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 20s
+5 actionable tasks: 5 executed
+2020-03-28T10:39+01:00: Finished running test iteration 5 on system with 10 replicas
+2020-03-28T10:40+01:00: Running test iteration 6 on system with 10 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 20s
+5 actionable tasks: 5 executed
+2020-03-28T10:40+01:00: Finished running test iteration 6 on system with 10 replicas
+2020-03-28T10:40+01:00: Running test iteration 7 on system with 10 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 20s
+5 actionable tasks: 5 executed
+2020-03-28T10:41+01:00: Finished running test iteration 7 on system with 10 replicas
+2020-03-28T10:41+01:00: Running test iteration 8 on system with 10 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 21s
+5 actionable tasks: 5 executed
+2020-03-28T10:42+01:00: Finished running test iteration 8 on system with 10 replicas
+2020-03-28T10:42+01:00: Running test iteration 9 on system with 10 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 20s
+5 actionable tasks: 5 executed
+2020-03-28T10:42+01:00: Finished running test iteration 9 on system with 10 replicas
+2020-03-28T10:43+01:00: Running test iteration 10 on system with 10 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 20s
+5 actionable tasks: 5 executed
+2020-03-28T10:43+01:00: Finished running test iteration 10 on system with 10 replicas
+2020-03-28T10:44+01:00: Running test iteration 11 on system with 10 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 20s
+5 actionable tasks: 5 executed
+2020-03-28T10:44+01:00: Finished running test iteration 11 on system with 10 replicas
+2020-03-28T10:45+01:00: Running test iteration 12 on system with 10 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 20s
+5 actionable tasks: 5 executed
+2020-03-28T10:45+01:00: Finished running test iteration 12 on system with 10 replicas
+2020-03-28T10:46+01:00: Running test iteration 13 on system with 10 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 20s
+5 actionable tasks: 5 executed
+2020-03-28T10:46+01:00: Finished running test iteration 13 on system with 10 replicas
+2020-03-28T10:46+01:00: Running test iteration 14 on system with 10 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 20s
+5 actionable tasks: 5 executed
+2020-03-28T10:47+01:00: Finished running test iteration 14 on system with 10 replicas
+2020-03-28T10:47+01:00: Running test iteration 15 on system with 10 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 20s
+5 actionable tasks: 5 executed
+2020-03-28T10:48+01:00: Finished running test iteration 15 on system with 10 replicas
+2020-03-28T10:48+01:00: Running test iteration 16 on system with 10 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 19s
+5 actionable tasks: 5 executed
+2020-03-28T10:48+01:00: Finished running test iteration 16 on system with 10 replicas
+2020-03-28T10:49+01:00: Running test iteration 17 on system with 10 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 20s
+5 actionable tasks: 5 executed
+2020-03-28T10:49+01:00: Finished running test iteration 17 on system with 10 replicas
+2020-03-28T10:50+01:00: Running test iteration 18 on system with 10 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 19s
+5 actionable tasks: 5 executed
+2020-03-28T10:50+01:00: Finished running test iteration 18 on system with 10 replicas
+2020-03-28T10:51+01:00: Running test iteration 19 on system with 10 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 19s
+5 actionable tasks: 5 executed
+2020-03-28T10:51+01:00: Finished running test iteration 19 on system with 10 replicas
+2020-03-28T10:51+01:00: Running test iteration 20 on system with 10 replicas
+> Task :DistributedObject:compileJava NO-SOURCE
+> Task :DistributedObject:compileScala
+> Task :DistributedObject:processResources NO-SOURCE
+> Task :DistributedObject:classes
+> Task :DistributedObject:compileTestJava NO-SOURCE
+> Task :DistributedObject:compileTestScala NO-SOURCE
+> Task :DistributedObject:processTestResources NO-SOURCE
+> Task :DistributedObject:testClasses UP-TO-DATE
+> Task :DistributedObject:compileSystemTestJava NO-SOURCE
+> Task :DistributedObject:compileSystemTestScala
+> Task :DistributedObject:processSystemTestResources NO-SOURCE
+> Task :DistributedObject:systemTestClasses
+> Task :DistributedObject:systemTest
+> Task :LookupService:compileJava NO-SOURCE
+> Task :LookupService:compileScala
+> Task :LookupService:processResources NO-SOURCE
+> Task :LookupService:classes
+> Task :LookupService:compileTestJava NO-SOURCE
+> Task :LookupService:compileTestScala
+> Task :LookupService:processTestResources NO-SOURCE
+> Task :LookupService:testClasses
+> Task :LookupService:compileSystemTestJava NO-SOURCE
+> Task :LookupService:compileSystemTestScala NO-SOURCE
+> Task :LookupService:processSystemTestResources NO-SOURCE
+> Task :LookupService:systemTestClasses UP-TO-DATE
+> Task :LookupService:systemTest NO-SOURCE
+
+BUILD SUCCESSFUL in 19s
+5 actionable tasks: 5 executed
+2020-03-28T10:52+01:00: Finished running test iteration 20 on system with 10 replicas
+2020-03-28T10:52+01:00: Terminating EC2 instances
+> Task :terminateEC2Instances
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+Use '--warning-mode all' to show the individual deprecation warnings.
+See https://docs.gradle.org/6.2.2/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD SUCCESSFUL in 1s
+1 actionable task: 1 executed
+2020-03-28T10:52+01:00: Finished evaluation

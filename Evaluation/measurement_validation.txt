@@ -1,0 +1,112 @@
+For 2 replicas:
+Sample standard deviation: 0.5726668047854717
+Critical value t-test: 2.00099537704821
+
+Mean: 1115.5333333333333
+Confidence interval (mean, manually calculated):
+	[1115.277101, 1115.789565]
+Confidence interval (mean, t-test):
+	[1115.515311, 1115.551356]
+5% interval mean:
+	[1059.756667, 1171.310000]
+
+Median (50th percentile): 1115.0
+Confidence interval (median):
+	[1114.743768, 1115.256232]
+Confidence interval (median, t-test):
+	[1114.981978, 1115.018022]
+5% interval median:
+	[1059.250000, 1170.750000]
+
+Tail (99th percentile): 1128.4099999999999
+Confidence interval (tail):
+	[1128.153768, 1128.666232]
+Confidence interval (tail, t-test):
+	[1128.391978, 1128.428022]
+5% interval tail:
+	[1071.989500, 1184.830500]
+
+For 3 replicas:
+Sample standard deviation: 0.9049976329421446
+Critical value t-test: 2.00099537704821
+
+Mean: 1123.3333333333333
+Confidence interval (mean, manually calculated):
+	[1122.928405, 1123.738262]
+Confidence interval (mean, t-test):
+	[1123.304852, 1123.361815]
+5% interval mean:
+	[1067.166667, 1179.500000]
+
+Median (50th percentile): 1122.0
+Confidence interval (median):
+	[1121.595071, 1122.404929]
+Confidence interval (median, t-test):
+	[1121.971519, 1122.028481]
+5% interval median:
+	[1065.900000, 1178.100000]
+
+Tail (99th percentile): 1142.82
+Confidence interval (tail):
+	[1142.415071, 1143.224929]
+Confidence interval (tail, t-test):
+	[1142.791519, 1142.848481]
+5% interval tail:
+	[1085.679000, 1199.961000]
+
+For 5 replicas:
+Sample standard deviation: 1.538732510904021
+Critical value t-test: 2.00099537704821
+
+Mean: 1140.85
+Confidence interval (mean, manually calculated):
+	[1140.161515, 1141.538485]
+Confidence interval (mean, t-test):
+	[1140.801574, 1140.898426]
+5% interval mean:
+	[1083.807500, 1197.892500]
+
+Median (50th percentile): 1137.5
+Confidence interval (median):
+	[1136.811515, 1138.188485]
+Confidence interval (median, t-test):
+	[1137.451574, 1137.548426]
+5% interval median:
+	[1080.625000, 1194.375000]
+
+Tail (99th percentile): 1173.1499999999999
+Confidence interval (tail):
+	[1172.461515, 1173.838485]
+Confidence interval (tail, t-test):
+	[1173.101574, 1173.198426]
+5% interval tail:
+	[1114.492500, 1231.807500]
+
+For 8 replicas:
+Sample standard deviation: 2.6422781288087687
+Critical value t-test: 2.00099537704821
+
+Mean: 1172.4833333333333
+Confidence interval (mean, manually calculated):
+	[1171.301083, 1173.665584]
+Confidence interval (mean, t-test):
+	[1172.400178, 1172.566489]
+5% interval mean:
+	[1113.859167, 1231.107500]
+
+Median (50th percentile): 1168.5
+Confidence interval (median):
+	[1167.317749, 1169.682251]
+Confidence interval (median, t-test):
+	[1168.416844, 1168.583156]
+5% interval median:
+	[1110.075000, 1226.925000]
+
+Tail (99th percentile): 1223.1
+Confidence interval (tail):
+	[1221.917749, 1224.282251]
+Confidence interval (tail, t-test):
+	[1223.016844, 1223.183156]
+5% interval tail:
+	[1161.945000, 1284.255000]
+
