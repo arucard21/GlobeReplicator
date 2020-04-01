@@ -1,34 +1,72 @@
 #!/usr/bin/env python3 
+import pprint
 import csv
 import math
 import numpy
 import scipy.stats
+import matplotlib.pyplot as plt
 
-with open('Evaluation/Run 1 (test)/responseTimesScalability.csv', newline='') as measurementsFile:
-	measurements = csv.reader(measurementsFile, skipinitialspace=True)
-	measurements2 = []
-	for measurement in measurements:
-		if(measurement[0] == '2'):
-			measurements2.append(int(measurement[1]))
-	
-	stdDev = scipy.stats.sem(measurements2)
-	print("sample standard deviation:", stdDev)
-	tVal = abs(scipy.stats.t.ppf((1.0-0.95)/2.0, 19))
-	print("t-value:", tVal)
+measurements = {}
+
+for run in [1,2,3]:
+	with open("Evaluation/Run %d/responseTimesScalability.csv" % run, newline='') as measurementsFile:
+		measurementsReader = csv.reader(measurementsFile, skipinitialspace=True)
+		# skip header line
+		next(measurementsReader)
+		for measurementLine in measurementsReader:
+			if int(measurementLine[0]) not in measurements:
+				measurements[int(measurementLine[0])] = []
+			measurements[int(measurementLine[0])].append(int(measurementLine[1]))
+
+# write all measurements to a file for verification
+with open("Evaluation/measurements.txt", "w") as allMeasurementsFile:
+	pprint.pprint(measurements, allMeasurementsFile, indent=4)
+
+# validate the amount of measurements using confidence interval
+for objectConfiguration, responseTimes in measurements.items():
+	print("For %s replicas:" % objectConfiguration)
+	stdDev = scipy.stats.sem(responseTimes)
+	print("Sample standard deviation:", stdDev)
+	alpha = (1.0-0.95)/2.0
+	degreesOfFreedom = len(responseTimes)-1
+	tVal = scipy.stats.t.ppf(1-alpha, degreesOfFreedom)
+	print("Critical value t-test:", tVal)
 	diff = tVal * (stdDev / math.sqrt(20))
-	print("diff:", diff)
 	print()
-	mean = numpy.mean(measurements2)
-	print("mean:", mean)
-	print("confidence interval (mean): [%f, %f]" % (mean - diff, mean + diff))
-	print("confidence interval (mean, t-test)", scipy.stats.t.interval(0.025, 19, loc=mean, scale=stdDev))
-	
-	median = numpy.median(measurements2)
-	print("median:", median)
-	print("confidence interval (median): [%f, %f]" % (median - diff, median + diff))
-	print("confidence interval (median, t-test)", scipy.stats.t.interval(0.025, 19, loc=median, scale=stdDev))
-	
-	tail = numpy.percentile(measurements2, 99)
-	print("tail:", tail)
-	print("confidence interval (tail): [%f, %f]" % (tail - diff, tail + diff))
-	print("confidence interval (tail, t-test)", scipy.stats.t.interval(0.025, 19, loc=tail, scale=stdDev))
+	mean = numpy.mean(responseTimes)
+	print("Mean:", mean)
+	print("Confidence interval (mean, manually calculated):")
+	print("\t[%f, %f]" % (mean - diff, mean + diff))
+	print("Confidence interval (mean, t-test):")
+	print("\t[%f, %f]" % scipy.stats.t.interval(alpha, degreesOfFreedom, loc=mean, scale=stdDev))
+	print("5% interval mean:")
+	print("\t[%f, %f]" % (mean - (0.05*mean), mean + (0.05*mean)))
+	print()
+	median = numpy.median(responseTimes)
+	print("Median (50th percentile):", median)
+	print("Confidence interval (median):")
+	print("\t[%f, %f]" % (median - diff, median + diff))
+	print("Confidence interval (median, t-test):")
+	print("\t[%f, %f]" % scipy.stats.t.interval(alpha, degreesOfFreedom, loc=median, scale=stdDev))
+	print("5% interval median:")
+	print("\t[%f, %f]" % (median - (0.05*median), median + (0.05*median)))
+	print()
+	tail = numpy.percentile(responseTimes, 99)
+	print("Tail (99th percentile):", tail)
+	print("Confidence interval (tail):")
+	print("\t[%f, %f]" % (tail - diff, tail + diff))
+	print("Confidence interval (tail, t-test):")
+	print("\t[%f, %f]" % scipy.stats.t.interval(alpha, degreesOfFreedom, loc=tail, scale=stdDev))
+	print("5% interval tail:")
+	print("\t[%f, %f]" % (tail - (0.05*tail), tail + (0.05*tail)))
+	print()
+
+# Plot the measurements in a single image
+figure, axes = plt.subplots(ncols=4, sharex=True, sharey=True, figsize=(10.0, 10.0))
+axesIndex = 0
+for objectConfiguration, responseTimes in measurements.items():
+	axes[axesIndex].set_title("%s replicas" % objectConfiguration)
+	axes[axesIndex].boxplot(responseTimes)
+	axes[axesIndex].set_frame_on(False)
+	axesIndex += 1
+plt.savefig("Evaluation/Response Times.png", transparent=True) 
