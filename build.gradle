@@ -11,6 +11,7 @@ import com.github.jengelman.gradle.plugins.shadow.transformers.AppendingTransfor
 
 def instanceIdsFileName = "instanceIds"
 def lookupServiceUrlFileName = "lookupServiceUrl"
+def evaluatorHostFileName = "evaluatorHost"
 def lookupServiceUrlPropertyName = "lookupservice.url"
 def distributedObjectUrlPropertyName = "distributedobject.url"
 def latestInstanceId
@@ -135,7 +136,9 @@ task terminateEC2Instances(type: AmazonEC2TerminateInstanceTask) {
             instances.eachLine { line -> instanceIds += line }
             instances.delete()
         }
-        rootProject.file(lookupServiceUrlFileName).delete()
+        if(rootProject.file(lookupServiceUrlFileName).exists()){
+			rootProject.file(lookupServiceUrlFileName).delete()
+        }
     }
 }
 
@@ -185,4 +188,52 @@ task deployDistributedObject(){
                     "nohup java -Dlookupservice.url=${lookupServiceUrl} -Ddistributedobject.url=http://${awsInstanceURL}:8080 -jar ~/DistributedObject-all.jar > ~/DistributedObject.log 2>&1 &"
         }
     }
+}
+
+task deployEvaluator(){
+    dependsOn subprojects.build
+    dependsOn deployEC2Instance
+    doLast{
+		rootProject.file(evaluatorHostFileName).setText("${awsInstanceURL}")
+        // wait for java to be installed
+        sleep(60 * 1000)
+        exec {
+            println "Create required directories on the EC2 instance"
+            commandLine "ssh",
+                    "-o", "stricthostkeychecking=no",
+                    "ubuntu@${awsInstanceURL}",
+                    "mkdir -p GlobeReplicator/DistributedObject GlobeReplicator/LookupService"
+        }
+        exec {
+            println "Copying main project to EC2 instance"
+            commandLine "scp",
+					"-r",
+                    "-o", "stricthostkeychecking=no",
+                    "build.gradle",
+                    ".gradle",
+                    "gradle",
+                    "gradlew",
+                    "gradlew.bat",
+                    "settings.gradle",
+                    "ubuntu@${awsInstanceURL}:~/GlobeReplicator"
+        }
+        exec {
+            println "Copying DistributedObject project to EC2 instance"
+            commandLine "scp",
+					"-r",
+                    "-o", "stricthostkeychecking=no",
+                    "DistributedObject/build.gradle",
+                    "DistributedObject/src",
+                    "ubuntu@${awsInstanceURL}:~/GlobeReplicator/DistributedObject/"
+        }
+        exec {
+            println "Copying LookupService project to EC2 instance"
+            commandLine "scp",
+                    "-r",
+                    "-o", "stricthostkeychecking=no",
+                    "LookupService/build.gradle",
+                    "LookupService/src",
+                    "ubuntu@${awsInstanceURL}:~/GlobeReplicator/LookupService/"
+        }
+	}
 }
