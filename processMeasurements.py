@@ -31,7 +31,7 @@ for objectConfiguration, responseTimes in measurements.items():
 	degreesOfFreedom = len(responseTimes)-1
 	tVal = scipy.stats.t.ppf(1-alpha, degreesOfFreedom)
 	print("Critical value t-test:", tVal)
-	diff = tVal * (stdDev / math.sqrt(20))
+	diff = tVal * (stdDev / math.sqrt(len(responseTimes)))
 	print()
 	mean = numpy.mean(responseTimes)
 	print("Mean:", mean)
