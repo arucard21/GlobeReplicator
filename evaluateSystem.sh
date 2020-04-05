@@ -11,10 +11,10 @@ then
 fi
 echo "$(date -Iminutes): Creating evaluator EC2 instance"
 # Deploy the EC2 instance used to run the evaluation experiments
-./gradlew deployEvaluator
+./gradlew deployEvaluator -Pec2.type=c4.large
 mv instanceIds instanceIdEvaluator
 # deploy the system with different amounts of Distributed Object replicas
-for replicas in 2 3 5 10
+for replicas in 2 3 5 7
 do
   echo "$(date -Iminutes): Deploy system with $replicas replicas"
   ./deploySystem.sh $replicas
@@ -25,7 +25,7 @@ do
   for iteration in {1..20}
   do
 	echo "$(date -Iminutes): Running test iteration $iteration on system with $replicas replicas"
-    ssh -o stricthostkeychecking=no ubuntu@$(cat evaluatorHost) "cd GlobeReplicator; ./gradlew -Dorg.gradle.jvmargs='-Xmx256m -Xms256m' -Plookupservice.url=$(cat lookupServiceUrl) systemTest"
+    ssh -o stricthostkeychecking=no ubuntu@$(cat evaluatorHost) "cd GlobeReplicator; ./gradlew --rerun-tasks -Plookupservice.url=$(cat lookupServiceUrl) systemTest"
     echo "$(date -Iminutes): Finished running test iteration $iteration on system with $replicas replicas"
     # Give the system time to fully finish the system test and become ready for the next iteration of testing
     sleep 5
