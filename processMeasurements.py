@@ -25,17 +25,17 @@ def validate(header, measurements):
 	for objectConfiguration, responseTimes in measurements.items():
 		print("For %s replicas:" % objectConfiguration)
 		stdDev = scipy.stats.sem(responseTimes)
-		print("Sample standard deviation:", stdDev)
+		#print("Sample standard deviation:", stdDev)
 		alpha = (1.0-0.95)/2.0
 		degreesOfFreedom = len(responseTimes)-1
 		tVal = scipy.stats.t.ppf(1-alpha, degreesOfFreedom)
-		print("Critical value t-test:", tVal)
+		#print("Critical value t-test:", tVal)
 		diff = tVal * (stdDev / math.sqrt(len(responseTimes)))
 		print()
 		mean = numpy.mean(responseTimes)
 		print("Mean:", mean)
-		print("Confidence interval (mean, manually calculated):")
-		print("\t[%f, %f]" % (mean - diff, mean + diff))
+		#print("Confidence interval (mean, manually calculated):")
+		#print("\t[%f, %f]" % (mean - diff, mean + diff))
 		print("Confidence interval (mean, t-test):")
 		print("\t[%f, %f]" % scipy.stats.t.interval(alpha, degreesOfFreedom, loc=mean, scale=stdDev))
 		print("5% interval mean:")
@@ -43,21 +43,33 @@ def validate(header, measurements):
 		print()
 		median = numpy.median(responseTimes)
 		print("Median (50th percentile):", median)
-		print("Confidence interval (median):")
-		print("\t[%f, %f]" % (median - diff, median + diff))
+		#print("Confidence interval (median):")
+		#print("\t[%f, %f]" % (median - diff, median + diff))
 		print("Confidence interval (median, t-test):")
-		print("\t[%f, %f]" % scipy.stats.t.interval(alpha, degreesOfFreedom, loc=median, scale=stdDev))
+		confIntervalMedian = scipy.stats.t.interval(alpha, degreesOfFreedom, loc=median, scale=stdDev)
+		print("\t[%f, %f]" % confIntervalMedian)
 		print("5% interval median:")
-		print("\t[%f, %f]" % (median - (0.05*median), median + (0.05*median)))
+		fivePercentIntervalMedian = (median - (0.05*median), median + (0.05*median))
+		print("\t[%f, %f]" % fivePercentIntervalMedian)
+		if confIntervalMedian[0] > fivePercentIntervalMedian[0] and confIntervalMedian[1] < fivePercentIntervalMedian[1]:
+			print("CORRECT: The confidence interval for the median is within the 5% error bound")
+		else:
+			print("INSUFFICIENT MEASUREMENTS: The confidence interval for the median is NOT within the 5% error bound")
 		print()
 		tail = numpy.percentile(responseTimes, 99)
 		print("Tail (99th percentile):", tail)
-		print("Confidence interval (tail):")
-		print("\t[%f, %f]" % (tail - diff, tail + diff))
+		#print("Confidence interval (tail):")
+		#print("\t[%f, %f]" % (tail - diff, tail + diff))
 		print("Confidence interval (tail, t-test):")
-		print("\t[%f, %f]" % scipy.stats.t.interval(alpha, degreesOfFreedom, loc=tail, scale=stdDev))
+		confIntervalTail = scipy.stats.t.interval(alpha, degreesOfFreedom, loc=tail, scale=stdDev)
+		print("\t[%f, %f]" % confIntervalTail)
 		print("5% interval tail:")
-		print("\t[%f, %f]" % (tail - (0.05*tail), tail + (0.05*tail)))
+		fivePercentIntervalTail = (tail - (0.05*tail), tail + (0.05*tail))
+		print("\t[%f, %f]" % fivePercentIntervalTail)
+		if confIntervalTail[0] > fivePercentIntervalTail[0] and confIntervalTail[1] < fivePercentIntervalTail[1]:
+			print("CORRECT: The confidence interval for the tail is within the 5% error bound")
+		else:
+			print("INSUFFICIENT MEASUREMENTS: The confidence interval for the tail is NOT within the 5% error bound")
 		print()
 
 # Plot the measurements in a single image
@@ -69,7 +81,7 @@ def plotMeasurements(measurements, filename):
 		axes[axesIndex].boxplot(responseTimes)
 		axes[axesIndex].set_frame_on(False)
 		axesIndex += 1
-	plt.savefig("Evaluation/%s.png" % filename, transparent=True)
+	plt.savefig("Evaluation/%s" % filename, transparent=True)
 
 measurementsScalability = readMeasurements("responseTimesScalability.csv")
 measurementsConcurrency = readMeasurements("responseTimesConcurrency.csv")
