@@ -61,7 +61,7 @@ object ReplicationSubobject {
     // First lock self
     locked = true
     // Simulate a longer locking mechanism (avoids achieving a lock too quickly, making the concurrency test more difficult)
-    Thread.sleep(1000)
+    Thread.sleep(100)
     val ownLocation = DOApplication.getDistributedObjectUri
     val filteredLocations = locations.filter(location =>  location != ownLocation)
     val lockedLocations = filteredLocations.filter(location => CommunicationSubobject.acquire_lock(location))
