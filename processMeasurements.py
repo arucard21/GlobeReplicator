@@ -83,8 +83,13 @@ def plotMeasurements(measurements, filename):
 		axesIndex += 1
 	plt.savefig("Evaluation/%s" % filename, transparent=True)
 
+measurementsNonReplicated = readMeasurements("nonReplicatedResponseTimes.csv")
 measurementsScalability = readMeasurements("responseTimesScalability.csv")
 measurementsConcurrency = readMeasurements("responseTimesConcurrency.csv")
+
+# write all non-replicated request measurements to a file for verification
+with open("Evaluation/measurements_nonreplicated.txt", "w") as allMeasurementsFile:
+	pprint.pprint(measurementsNonReplicated, allMeasurementsFile, indent=4)
 
 # write all scalability measurements to a file for verification
 with open("Evaluation/measurements_scalability.txt", "w") as allMeasurementsFile:
@@ -97,5 +102,6 @@ with open("Evaluation/measurements_concurrency.txt", "w") as allMeasurementsFile
 validate("Validating scalability measurements", measurementsScalability)
 validate("Validating concurrency measurements", measurementsConcurrency)
 
+plotMeasurements(measurementsNonReplicated, "Response Times Non-Replicated.png")
 plotMeasurements(measurementsScalability, "Response Times Scalability.png")
 plotMeasurements(measurementsConcurrency, "Response Times Concurrency.png")
