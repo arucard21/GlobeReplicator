@@ -1,68 +1,68 @@
 Validating scalability measurements
 For 2 replicas:
 
-Mean: 120.175
+Mean: 120.11666666666666
 Confidence interval (mean, t-test):
-	[120.152701, 120.197299]
+	[120.099805, 120.133528]
 5% interval mean:
-	[114.166250, 126.183750]
+	[114.110833, 126.122500]
 
 Median (50th percentile): 119.0
 Confidence interval (median, t-test):
-	[118.977701, 119.022299]
+	[118.983138, 119.016862]
 5% interval median:
 	[113.050000, 124.950000]
 CORRECT: The confidence interval for the median is within the 5% error bound
 
-Tail (99th percentile): 133.05
+Tail (99th percentile): 132.04999999999998
 Confidence interval (tail, t-test):
-	[133.027701, 133.072299]
+	[132.033138, 132.066862]
 5% interval tail:
-	[126.397500, 139.702500]
+	[125.447500, 138.652500]
 CORRECT: The confidence interval for the tail is within the 5% error bound
 
 For 3 replicas:
 
-Mean: 127.8
+Mean: 128.48333333333332
 Confidence interval (mean, t-test):
-	[127.765262, 127.834738]
+	[128.456264, 128.510403]
 5% interval mean:
-	[121.410000, 134.190000]
+	[122.059167, 134.907500]
 
-Median (50th percentile): 125.5
+Median (50th percentile): 126.5
 Confidence interval (median, t-test):
-	[125.465262, 125.534738]
+	[126.472931, 126.527069]
 5% interval median:
-	[119.225000, 131.775000]
+	[120.175000, 132.825000]
 CORRECT: The confidence interval for the median is within the 5% error bound
 
 Tail (99th percentile): 146.0
 Confidence interval (tail, t-test):
-	[145.965262, 146.034738]
+	[145.972931, 146.027069]
 5% interval tail:
 	[138.700000, 153.300000]
 CORRECT: The confidence interval for the tail is within the 5% error bound
 
 For 5 replicas:
 
-Mean: 142.55
+Mean: 144.95
 Confidence interval (mean, t-test):
-	[142.492351, 142.607649]
+	[144.899495, 145.000505]
 5% interval mean:
-	[135.422500, 149.677500]
+	[137.702500, 152.197500]
 
-Median (50th percentile): 139.0
+Median (50th percentile): 142.0
 Confidence interval (median, t-test):
-	[138.942351, 139.057649]
+	[141.949495, 142.050505]
 5% interval median:
-	[132.050000, 145.950000]
+	[134.900000, 149.100000]
 CORRECT: The confidence interval for the median is within the 5% error bound
 
-Tail (99th percentile): 182.49
+Tail (99th percentile): 187.23
 Confidence interval (tail, t-test):
-	[182.432351, 182.547649]
+	[187.179495, 187.280505]
 5% interval tail:
-	[173.365500, 191.614500]
+	[177.868500, 196.591500]
 CORRECT: The confidence interval for the tail is within the 5% error bound
 
 For 7 replicas:
@@ -87,71 +87,93 @@ Confidence interval (tail, t-test):
 	[193.638500, 214.021500]
 CORRECT: The confidence interval for the tail is within the 5% error bound
 
+For 6 replicas:
+
+Mean: 153.85
+Confidence interval (mean, t-test):
+	[153.759591, 153.940409]
+5% interval mean:
+	[146.157500, 161.542500]
+
+Median (50th percentile): 152.0
+Confidence interval (median, t-test):
+	[151.909591, 152.090409]
+5% interval median:
+	[144.400000, 159.600000]
+CORRECT: The confidence interval for the median is within the 5% error bound
+
+Tail (99th percentile): 188.82
+Confidence interval (tail, t-test):
+	[188.729591, 188.910409]
+5% interval tail:
+	[179.379000, 198.261000]
+CORRECT: The confidence interval for the tail is within the 5% error bound
+
 Validating concurrency measurements
 For 2 replicas:
 
-Mean: 118.2
+Mean: 118.01666666666667
 Confidence interval (mean, t-test):
-	[118.134899, 118.265101]
+	[117.964521, 118.068813]
 5% interval mean:
-	[112.290000, 124.110000]
+	[112.115833, 123.917500]
 
 Median (50th percentile): 115.0
 Confidence interval (median, t-test):
-	[114.934899, 115.065101]
+	[114.947854, 115.052146]
 5% interval median:
 	[109.250000, 120.750000]
 CORRECT: The confidence interval for the median is within the 5% error bound
 
-Tail (99th percentile): 169.02999999999997
+Tail (99th percentile): 171.50999999999996
 Confidence interval (tail, t-test):
-	[168.964899, 169.095101]
+	[171.457854, 171.562146]
 5% interval tail:
-	[160.578500, 177.481500]
+	[162.934500, 180.085500]
 CORRECT: The confidence interval for the tail is within the 5% error bound
 
 For 3 replicas:
 
-Mean: 116.625
+Mean: 116.95
 Confidence interval (mean, t-test):
-	[116.571999, 116.678001]
+	[116.906130, 116.993870]
 5% interval mean:
-	[110.793750, 122.456250]
+	[111.102500, 122.797500]
 
 Median (50th percentile): 114.0
 Confidence interval (median, t-test):
-	[113.946999, 114.053001]
+	[113.956130, 114.043870]
 5% interval median:
 	[108.300000, 119.700000]
 CORRECT: The confidence interval for the median is within the 5% error bound
 
-Tail (99th percentile): 161.61
+Tail (99th percentile): 163.23
 Confidence interval (tail, t-test):
-	[161.556999, 161.663001]
+	[163.186130, 163.273870]
 5% interval tail:
-	[153.529500, 169.690500]
+	[155.068500, 171.391500]
 CORRECT: The confidence interval for the tail is within the 5% error bound
 
 For 5 replicas:
 
-Mean: 116.475
+Mean: 117.31666666666666
 Confidence interval (mean, t-test):
-	[116.426035, 116.523965]
+	[117.276089, 117.357244]
 5% interval mean:
-	[110.651250, 122.298750]
+	[111.450833, 123.182500]
 
-Median (50th percentile): 114.0
+Median (50th percentile): 115.0
 Confidence interval (median, t-test):
-	[113.951035, 114.048965]
+	[114.959423, 115.040577]
 5% interval median:
-	[108.300000, 119.700000]
+	[109.250000, 120.750000]
 CORRECT: The confidence interval for the median is within the 5% error bound
 
-Tail (99th percentile): 157.82999999999998
+Tail (99th percentile): 159.82
 Confidence interval (tail, t-test):
-	[157.781035, 157.878965]
+	[159.779423, 159.860577]
 5% interval tail:
-	[149.938500, 165.721500]
+	[151.829000, 167.811000]
 CORRECT: The confidence interval for the tail is within the 5% error bound
 
 For 7 replicas:
@@ -174,5 +196,27 @@ Confidence interval (tail, t-test):
 	[164.653914, 164.766086]
 5% interval tail:
 	[156.474500, 172.945500]
+CORRECT: The confidence interval for the tail is within the 5% error bound
+
+For 6 replicas:
+
+Mean: 116.9
+Confidence interval (mean, t-test):
+	[116.833438, 116.966562]
+5% interval mean:
+	[111.055000, 122.745000]
+
+Median (50th percentile): 115.0
+Confidence interval (median, t-test):
+	[114.933438, 115.066562]
+5% interval median:
+	[109.250000, 120.750000]
+CORRECT: The confidence interval for the median is within the 5% error bound
+
+Tail (99th percentile): 149.15999999999997
+Confidence interval (tail, t-test):
+	[149.093438, 149.226562]
+5% interval tail:
+	[141.702000, 156.618000]
 CORRECT: The confidence interval for the tail is within the 5% error bound
 
