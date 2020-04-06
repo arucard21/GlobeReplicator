@@ -103,9 +103,20 @@ class DistributedObjectTest extends AnyFunSuite with BeforeAndAfter {
 
   test("getNumber should correctly retrieve the number of the distributed object") {
     setNumberForDistributedObject(objectLocations(0), 12)
+    val beginTime = System.currentTimeMillis()
+    val retrievedNumber = getNumberForDistributedObject(objectLocations(0))
+    val endTime = System.currentTimeMillis()
     assertResult(12, "The number in the distributed object does not match the default value") {
-      getNumberForDistributedObject(objectLocations(0))
+      retrievedNumber
     }
+    val responseTimeInMillis = endTime - beginTime
+    val filename = "nonReplicatedResponseTimes.csv"
+    val file = Paths.get(filename)
+    if(Files.notExists(file)){
+      // write header row
+      Files.write(Paths.get(filename), Arrays.asList("objectCount, responseTime(ms)"), StandardCharsets.UTF_8)
+    }
+    Files.write(Paths.get(filename), Arrays.asList(s"${objectLocations.size.toString}, $responseTimeInMillis"), StandardCharsets.UTF_8, StandardOpenOption.APPEND)
   }
 
   test("setNumber should correctly replicate to all other objects (scalability evaluation test)") {

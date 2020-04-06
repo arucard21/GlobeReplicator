@@ -38,6 +38,7 @@ echo "$(date -Iminutes): Copying measurements from evaluator EC2 instance"
 # Copy back the measurements taken in the evaluator EC2 instance
 scp -o stricthostkeychecking=no ubuntu@$(cat evaluatorHost):~/GlobeReplicator/DistributedObject/responseTimesScalability.csv "responseTimesScalability.csv"
 scp -o stricthostkeychecking=no ubuntu@$(cat evaluatorHost):~/GlobeReplicator/DistributedObject/responseTimesConcurrency.csv "responseTimesConcurrency.csv"
+scp -o stricthostkeychecking=no ubuntu@$(cat evaluatorHost):~/GlobeReplicator/DistributedObject/nonReplicatedResponseTimes.csv "nonReplicatedResponseTimes.csv"
 # Clean up the evaluator EC2 instance
 echo "$(date -Iminutes): Terminating evaluator EC2 instance"
 mv instanceIdEvaluator instanceIds
