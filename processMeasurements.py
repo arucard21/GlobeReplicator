@@ -83,6 +83,22 @@ def plotMeasurements(measurements, filename):
 		axesIndex += 1
 	plt.savefig("Evaluation/%s" % filename, transparent=True)
 
+# Plot the measurements in a single image with baseline
+def plotMeasurementsWithBaseline(measurements, measurementsBaseline, filename):
+	baseline = {}
+	for objectConfiguration, responseTimes in measurementsBaseline.items():
+		baseline[objectConfiguration] = (100 + 2 * ((objectConfiguration - 1) * numpy.mean(responseTimes)))
+
+	figure, axes = plt.subplots(ncols=4, sharex=True, sharey=True, figsize=(10.0, 10.0))
+	axesIndex = 0
+	for objectConfiguration, responseTimes in measurements.items():
+		axes[axesIndex].set_title("%s replicas" % objectConfiguration)
+		axes[axesIndex].boxplot(responseTimes)
+		axes[axesIndex].plot(1, baseline[objectConfiguration], "bx")
+		axes[axesIndex].set_frame_on(False)
+		axesIndex += 1
+	plt.savefig("Evaluation/%s" % filename, transparent=True)
+
 measurementsNonReplicated = readMeasurements("nonReplicatedResponseTimes.csv")
 measurementsScalability = readMeasurements("responseTimesScalability.csv")
 measurementsConcurrency = readMeasurements("responseTimesConcurrency.csv")
@@ -103,5 +119,5 @@ validate("Validating scalability measurements", measurementsScalability)
 validate("Validating concurrency measurements", measurementsConcurrency)
 
 plotMeasurements(measurementsNonReplicated, "Response Times Non-Replicated.png")
-plotMeasurements(measurementsScalability, "Response Times Scalability.png")
+plotMeasurementsWithBaseline(measurementsScalability, measurementsNonReplicated, "Response Times Scalability.png")
 plotMeasurements(measurementsConcurrency, "Response Times Concurrency.png")
